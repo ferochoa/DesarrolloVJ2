@@ -14,11 +14,5 @@ public class PlayerModel : IPlayerModel {
     {
         this.position = pos;
     }
-    public void shoot()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("el player ha disparado");
-        }
-    }
+   
 }

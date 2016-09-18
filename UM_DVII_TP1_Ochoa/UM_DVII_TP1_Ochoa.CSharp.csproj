@@ -70,6 +70,8 @@
     <Compile Include="Assets\Scripts\Models\PlayerModel.cs" />
     <Compile Include="Assets\Scripts\MyContext.cs" />
     <Compile Include="Assets\Scripts\StrangeInitializer.cs" />
+    <Compile Include="Assets\Scripts\Views\InputView.cs" />
+    <Compile Include="Assets\Scripts\Views\InputViewMediator.cs" />
     <Compile Include="Assets\Scripts\Views\ObjectView.cs" />
     <Compile Include="Assets\Scripts\Views\PlayerView.cs" />
     <Compile Include="Assets\Scripts\Views\PlayerViewMediator.cs" />

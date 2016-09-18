@@ -8,5 +8,5 @@ public interface IPlayerModel {
 
     void setPoints();
     void setPlayerPosition(Vector3 pos);
-    void shoot();
+   
 }

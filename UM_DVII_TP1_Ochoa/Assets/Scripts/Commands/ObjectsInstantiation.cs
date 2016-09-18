@@ -30,7 +30,9 @@ public class ObjectsInstantiation : EventCommand
 
         go3.transform.parent = contextView.transform;
 
-        dispatcher.Dispatch(GameEvents.ON_APLICATION_READY);
+       
+
+		dispatcher.Dispatch (GameEvents.ON_APLICATION_READY);
 
     }
 }

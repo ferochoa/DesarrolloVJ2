@@ -10,16 +10,25 @@ public class PlayerViewMediator : EventMediator
 
     override public void OnRegister()
     {
-        view.viewDispatcher.AddListener(GameEvents.PLAYER_SHOOT, onPlayerShot);
+        dispatcher.AddListener(GameEvents.ON_PLAYER_GO_LEFT, playerMovement);
+		dispatcher.AddListener(GameEvents.ON_PLAYER_GO_RIGHT, playerMovement);
+		dispatcher.AddListener(GameEvents.ON_PLAYER_GO_FOWARD, playerMovement);
+		dispatcher.AddListener(GameEvents.ON_PLAYER_GO_BACKWARD, playerMovement);
+		dispatcher.AddListener(GameEvents.ON_PLAYER_JUMP, playerMovement);
     }
 
     override public void OnRemove()
     {
-        view.viewDispatcher.AddListener(GameEvents.PLAYER_SHOOT, onPlayerShot);
+		dispatcher.RemoveListener(GameEvents.ON_PLAYER_GO_LEFT, playerMovement);
+		dispatcher.RemoveListener(GameEvents.ON_PLAYER_GO_RIGHT, playerMovement);
+		dispatcher.RemoveListener(GameEvents.ON_PLAYER_GO_FOWARD, playerMovement);
+		dispatcher.RemoveListener(GameEvents.ON_PLAYER_GO_BACKWARD, playerMovement);
+		dispatcher.RemoveListener(GameEvents.ON_PLAYER_JUMP, playerMovement);
+       
     }
 
-    private void onPlayerShot()
+   void playerMovement()
     {
-        dispatcher.Dispatch(GameEvents.PLAYER_SHOOT, view.transform.position);
+        view.playerMovement();
     }
 }
