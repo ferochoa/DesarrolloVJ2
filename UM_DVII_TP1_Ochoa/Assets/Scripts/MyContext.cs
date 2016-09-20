@@ -18,10 +18,13 @@ public class MyContext : MVCSContext {
         
         commandBinder.Bind(ContextEvent.START).To<PlayerInstantiation>();
 		commandBinder.Bind (GameEvents.ON_PLAYER_ADDED_TO_SCENE).To<ObjectsInstantiation> ();
-		commandBinder.Bind (GameEvents.ON_APLICATION_READY).To<InputInstantiation> ();
+        commandBinder.Bind(GameEvents.ON_APLICATION_READY).To<InputInstantiation>();
+        commandBinder.Bind(GameEvents.READY_TO_GO).To<HUDInstantiation>();
 
         mediationBinder.Bind<PlayerView>().To<PlayerViewMediator>();
         mediationBinder.Bind<InputView>().To<InputViewMediator>();
+        mediationBinder.Bind<TimerView>().To<TimerViewMediator>();
+        mediationBinder.Bind<HUDView>().To<HUDViewMediator>();
 
 
 

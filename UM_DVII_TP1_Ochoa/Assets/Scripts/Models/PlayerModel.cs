@@ -9,6 +9,7 @@ public class PlayerModel : IPlayerModel {
     public void setPoints()
     {
         points = 0;
+       
     }
     public void setPlayerPosition(Vector3 pos)
     {

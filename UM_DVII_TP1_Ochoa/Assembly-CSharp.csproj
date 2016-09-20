@@ -48,6 +48,7 @@
      <Compile Include="Assets\Scripts\Commands\InputInstantiation.cs" />
      <Compile Include="Assets\Scripts\Commands\ObjectsInstantiation.cs" />
      <Compile Include="Assets\Scripts\Commands\PlayerInstantiation.cs" />
+     <Compile Include="Assets\Scripts\Commands\Timer.cs" />
      <Compile Include="Assets\Scripts\Events\GameEvents.cs" />
      <Compile Include="Assets\Scripts\Models\IPlayerModel.cs" />
      <Compile Include="Assets\Scripts\Models\PlayerModel.cs" />

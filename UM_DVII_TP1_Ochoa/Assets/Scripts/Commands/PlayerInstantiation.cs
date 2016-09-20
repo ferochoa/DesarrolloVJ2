@@ -17,7 +17,9 @@ public class PlayerInstantiation :EventCommand {
         GameObject go = GameObject.Instantiate(Resources.Load(PrefabNames.PLAYER_PREFAB)) as GameObject;
 
         go.name = "Player";
-        go.AddComponent<PlayerView>();   
+        go.AddComponent<PlayerView>();
+		go.AddComponent<Rigidbody> ();
+		
 		   
        
         go.transform.parent = contextView.transform;

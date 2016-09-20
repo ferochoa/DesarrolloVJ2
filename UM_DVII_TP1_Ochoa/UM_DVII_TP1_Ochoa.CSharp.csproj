@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Commands\HUDInstantiation.cs" />
+    <Compile Include="Assets\Scripts\Commands\InputInstantiation.cs" />
     <Compile Include="Assets\Scripts\Commands\ObjectsInstantiation.cs" />
     <Compile Include="Assets\Scripts\Commands\PlayerInstantiation.cs" />
     <Compile Include="Assets\Scripts\Events\GameEvents.cs" />
@@ -70,12 +72,16 @@
     <Compile Include="Assets\Scripts\Models\PlayerModel.cs" />
     <Compile Include="Assets\Scripts\MyContext.cs" />
     <Compile Include="Assets\Scripts\StrangeInitializer.cs" />
+    <Compile Include="Assets\Scripts\Views\HUDView.cs" />
+    <Compile Include="Assets\Scripts\Views\HUDViewMediator.cs" />
     <Compile Include="Assets\Scripts\Views\InputView.cs" />
     <Compile Include="Assets\Scripts\Views\InputViewMediator.cs" />
     <Compile Include="Assets\Scripts\Views\ObjectView.cs" />
     <Compile Include="Assets\Scripts\Views\PlayerView.cs" />
     <Compile Include="Assets\Scripts\Views\PlayerViewMediator.cs" />
     <Compile Include="Assets\Scripts\Views\PrefabNames.cs" />
+    <Compile Include="Assets\Scripts\Views\TimerView.cs" />
+    <Compile Include="Assets\Scripts\Views\TimerViewMediator.cs" />
     <Compile Include="Assets\strange\ReadMe.cs" />
     <Compile Include="Assets\strange\extensions\command\api\CommandExceptionType.cs" />
     <Compile Include="Assets\strange\extensions\command\api\CommandKeys.cs" />

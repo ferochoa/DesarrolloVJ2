@@ -5,5 +5,6 @@
     public static string GROUND_PREFAB = "Ground";
     public static string PLAYER_PREFAB = "Player";
     public static string INPUT_PREFAB = "Input";
+    public static string HUD_PREFAB = "HUD";
 
 }
