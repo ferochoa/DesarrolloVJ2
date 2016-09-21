@@ -7,8 +7,7 @@ public class PlayerInstantiation :EventCommand {
     [Inject(ContextKeys.CONTEXT_VIEW)]
     public GameObject contextView { get; set; }
 
-    [Inject]
-    public IPlayerModel playerModel { get; set; }
+    
 
     override public void Execute()
     {
@@ -18,12 +17,12 @@ public class PlayerInstantiation :EventCommand {
 
         go.name = "Player";
         go.AddComponent<PlayerView>();
-		go.AddComponent<Rigidbody> ();
-		
-		   
-       
+		go.AddComponent<Rigidbody> ();       
+
         go.transform.parent = contextView.transform;
 		dispatcher.Dispatch(GameEvents.ON_PLAYER_ADDED_TO_SCENE);
+       
+        
 
     }
 

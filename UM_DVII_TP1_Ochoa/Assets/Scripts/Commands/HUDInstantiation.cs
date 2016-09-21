@@ -7,8 +7,11 @@ public class HUDInstantiation : EventCommand
     [Inject(ContextKeys.CONTEXT_VIEW)]
     public GameObject contextView { get; set; }
 
+
     [Inject]
     public IPlayerModel myPlayer { get; set; }
+
+
 
 
     override public void Execute()
@@ -19,8 +22,8 @@ public class HUDInstantiation : EventCommand
         go.AddComponent<HUDView>();
         go.AddComponent<TimerView>();
 
-             
-        dispatcher.Dispatch(GameEvents.ON_SET_POINTS, myPlayer.points);
+        HUDView hw = go.GetComponent<HUDView>();
+        hw.updatePoints(myPlayer.points);
         go.transform.parent = contextView.transform;
     }
 }

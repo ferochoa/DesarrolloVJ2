@@ -7,22 +7,27 @@ using UnityEngine.UI;
 public class HUDView : View
 {
 
+    private int playerPoints = 0;
+    private const string GAME_OVER = "GAME OVER";
+
     [Inject]
     public IEventDispatcher viewDispatcher { get; set; }
 
-    
+  
+
     public void Update() {
 	
 	}
 
     public void updatePoints(int points)
     {
-        Debug.Log("puntos");
+        playerPoints = points;
+        Debug.Log("puntos: " +points);
     }
 
     public void gameOver()
     {
-        Debug.Log("El juego ha terminado");
+        Debug.Log(GAME_OVER);
     }
 
 
