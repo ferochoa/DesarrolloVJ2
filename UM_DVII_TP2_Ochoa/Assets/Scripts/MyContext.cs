@@ -20,6 +20,7 @@ public class MyContext : MVCSContext {
         commandBinder.Bind(GameEvents.ON_PLAYER_ADDED_TO_SCENE).To<ObjectsInstantiation>().To<EnemyInstantiation>().To<CollectableInstantiation>() ;
         commandBinder.Bind(GameEvents.ON_APLICATION_READY).To<InputInstantiation>();
         commandBinder.Bind(GameEvents.READY_TO_GO).To<HUDInstantiation>();
+        commandBinder.Bind(GameEvents.ON_COLLECTABLE_COLLISION).To<PlayerSpeedUp>();
 
         mediationBinder.Bind<PlayerView>().To<PlayerViewMediator>();
         mediationBinder.Bind<InputView>().To<InputViewMediator>();

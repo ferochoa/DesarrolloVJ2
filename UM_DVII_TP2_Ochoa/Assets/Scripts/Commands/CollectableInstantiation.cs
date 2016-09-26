@@ -44,8 +44,14 @@ public class CollectableInstantiation : EventCommand
                 collectableModel.type = 3;
                 goColl.transform.position = new Vector3(3, 0.5f, -3.5f);
             }
-          
+
+                   
+            
+
             goColl.transform.parent = contextView.transform;
+          
+            
+          
            
            // Debug.Log(collectableName + " agregado a la escena");
            // Debug.Log(collectableName + " tipo: " + collectableModel.type);

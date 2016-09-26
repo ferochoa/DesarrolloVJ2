@@ -8,6 +8,7 @@ public class EnemyInstantiation : EventCommand
     public GameObject contextView { get; set; }
 
     private const string ENEMY = "Enemy";
+    
 
     public override void Execute()        
     {
@@ -24,16 +25,21 @@ public class EnemyInstantiation : EventCommand
             if (i == 0)
             {
                 enemyModel.health = 200;
-                goEnemy.transform.position = new Vector3(-3.5f,1,4);
+                goEnemy.transform.position = new Vector3(-3.5f,1,4);              
 
             }
             if (i == 1)
             {
                 enemyModel.health = 180;
                 goEnemy.transform.position = new Vector3(4,1,-2);
+
+
             }
-            goEnemy.transform.parent = contextView.transform;
+            goEnemy.AddComponent<Rigidbody>();
             goEnemy.AddComponent<EnemyView>();
+            goEnemy.transform.parent = contextView.transform;
+            
+         
            // Debug.Log(enemyName+" agregado a la escena");
            // Debug.Log(enemyName + " vida: " + enemyModel.health);
 

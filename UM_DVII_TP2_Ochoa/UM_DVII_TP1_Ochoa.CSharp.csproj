@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Commands\InputInstantiation.cs" />
     <Compile Include="Assets\Scripts\Commands\ObjectsInstantiation.cs" />
     <Compile Include="Assets\Scripts\Commands\PlayerInstantiation.cs" />
+    <Compile Include="Assets\Scripts\Commands\PlayerSpeedUp.cs" />
     <Compile Include="Assets\Scripts\Events\GameEvents.cs" />
     <Compile Include="Assets\Scripts\Models\CollectableModel.cs" />
     <Compile Include="Assets\Scripts\Models\EnemyModel.cs" />

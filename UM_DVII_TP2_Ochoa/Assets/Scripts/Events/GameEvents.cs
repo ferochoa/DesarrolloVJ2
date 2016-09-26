@@ -15,6 +15,8 @@ public class GameEvents : MonoBehaviour {
 	public static string GAME_OVER = "GAME_OVER";
     public static string READY_TO_GO = "READY_TO GO";
     public static string ON_SET_POINTS = "ON_SET_POINTS";
+    public static string ON_ENEMY_COLLISION = "ON_ENEMY_COLLISION";
+    public static string ON_COLLECTABLE_COLLISION = "ON_COLLECTABLE_COLLISION";
 
 
 
