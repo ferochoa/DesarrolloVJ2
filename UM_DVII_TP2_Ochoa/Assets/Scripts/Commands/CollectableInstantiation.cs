@@ -45,9 +45,9 @@ public class CollectableInstantiation : EventCommand
                 goColl.transform.position = new Vector3(3, 0.5f, -3.5f);
             }
 
-                   
-            
 
+
+          
             goColl.transform.parent = contextView.transform;
           
             

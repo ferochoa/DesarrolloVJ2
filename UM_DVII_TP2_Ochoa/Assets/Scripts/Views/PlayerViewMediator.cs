@@ -10,8 +10,10 @@ public class PlayerViewMediator : EventMediator
 
     override public void OnRegister()
     {
-        view.viewDispatcher.AddListener(GameEvents.ON_ENEMY_COLLISION, onEnemyCollision);
+        view.init();
+        //view.viewDispatcher.AddListener(GameEvents.ON_ENEMY_COLLISION, onEnemyCollision);
         view.viewDispatcher.AddListener(GameEvents.ON_COLLECTABLE_COLLISION, onCollectableCollision);
+        dispatcher.Dispatch(GameEvents.ON_COLLECTABLE_COLLISION, view.COLLECTABLE1);   
         dispatcher.AddListener(GameEvents.ON_PLAYER_GO_LEFT, playerGoLeft);
 		dispatcher.AddListener(GameEvents.ON_PLAYER_GO_RIGHT, playerGoRight);
 		dispatcher.AddListener(GameEvents.ON_PLAYER_GO_FOWARD, playerGoFoward);
@@ -21,7 +23,8 @@ public class PlayerViewMediator : EventMediator
 
     override public void OnRemove()
     {
-		dispatcher.RemoveListener(GameEvents.ON_PLAYER_GO_LEFT, playerGoLeft);
+        view.viewDispatcher.RemoveListener(GameEvents.ON_COLLECTABLE_COLLISION, onCollectableCollision);
+        dispatcher.RemoveListener(GameEvents.ON_PLAYER_GO_LEFT, playerGoLeft);
 		dispatcher.RemoveListener(GameEvents.ON_PLAYER_GO_RIGHT, playerGoRight);
 		dispatcher.RemoveListener(GameEvents.ON_PLAYER_GO_FOWARD, playerGoFoward);
 		dispatcher.RemoveListener(GameEvents.ON_PLAYER_GO_BACKWARD, playerGoBackward);
@@ -49,13 +52,13 @@ public class PlayerViewMediator : EventMediator
 	{
 		view.playerJump();
 	}
-    void onEnemyCollision()
+   /* void onEnemyCollision()
     {
         dispatcher.Dispatch(GameEvents.ON_ENEMY_COLLISION);
-    }
-    void onCollectableCollision()
+    }*/
+    void onCollectableCollision(IEvent evt)
     {
-        dispatcher.Dispatch(GameEvents.ON_COLLECTABLE_COLLISION);
+        dispatcher.Dispatch(GameEvents.ON_COLLECTABLE_COLLISION, evt.data);
     }
 
 }

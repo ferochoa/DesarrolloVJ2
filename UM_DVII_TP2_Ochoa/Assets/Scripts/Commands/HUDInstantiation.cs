@@ -23,6 +23,7 @@ public class HUDInstantiation : EventCommand
         go.AddComponent<TimerView>();
 
         HUDView hw = go.GetComponent<HUDView>();
+        myPlayer.setPoints();
         hw.updatePoints(myPlayer.points);
         go.transform.parent = contextView.transform;
     }

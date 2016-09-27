@@ -2,11 +2,14 @@
 using strange.extensions.mediation.impl;
 using strange.extensions.dispatcher.eventdispatcher.api;
 using System.Collections;
+using System;
 
 public class PlayerView : View {
 
     private const string ENEMY = "Enemy";
-    private const string COLLECTABLE = "Collectable";
+    public string COLLECTABLE1 = "Collectable1";
+   
+
     Rigidbody rb;
     public float speed;
 
@@ -14,49 +17,50 @@ public class PlayerView : View {
     [Inject]
     public IEventDispatcher viewDispatcher { get; set; }
 
-     void init()
+     internal void init()
     {
         rb = GetComponent<Rigidbody>();
-        speed = 50;
+        speed =200; // prueba, esto no va aca
+       
     }
 
-    void OnCollision(Collision coll)
+    void OnCollisionEnter(Collision col)
     {
-        if(coll.gameObject.tag == ENEMY)
+       /* if(col.gameObject.tag == ENEMY)
         {
             viewDispatcher.Dispatch(GameEvents.ON_ENEMY_COLLISION);
-        }
-        if(coll.gameObject.tag == COLLECTABLE)
+        }*/
+        if(col.gameObject.name == COLLECTABLE1)
         {
-            viewDispatcher.Dispatch(GameEvents.ON_COLLECTABLE_COLLISION);
+            viewDispatcher.Dispatch(GameEvents.ON_COLLECTABLE_COLLISION, COLLECTABLE1);
         }
     }
 
-
-
+   
 
     public void playerGoLeft()
     {
-         Debug.Log("El player se ha movido a la izquierda");
-
-        rb.AddForce(new Vector3(1, 0, 0) * speed, ForceMode.Force);
+       rb.AddForce(new Vector3(1, 0, 0) * speed, ForceMode.Force);
 
     }
     public void playerGoRight()
 	{
-		Debug.Log("El player se ha movido a la derecha ");
-	}
+        rb.AddForce(new Vector3(-1, 0, 0) * speed, ForceMode.Force);
+    }
 	public void playerGoFoward()
 	{
-	    Debug.Log("El player se ha movido hacia adelante");
-	}
+        rb.AddForce(new Vector3(0, 0, -1) * speed, ForceMode.Force);
+    }
 	public void playerGoBackward()
 	{
-		Debug.Log("El player se ha movido hacia atras");
-	}
+        rb.AddForce(new Vector3(0, 0, 1) * speed, ForceMode.Force);
+    }
 	public void playerJump()
 	{
-		Debug.Log("El player se ha saltado");
-	}
-   
+        rb.AddForce(new Vector3(0, 1, 0) * speed, ForceMode.Force);
+    }
+    public void getSpeed(float speed)
+    {
+        Debug.Log("Speed: "+speed);
+    }
 }

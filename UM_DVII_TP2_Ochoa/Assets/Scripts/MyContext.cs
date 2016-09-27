@@ -27,12 +27,14 @@ public class MyContext : MVCSContext {
         mediationBinder.Bind<TimerView>().To<TimerViewMediator>();
         mediationBinder.Bind<HUDView>().To<HUDViewMediator>();
         mediationBinder.Bind<EnemyView>().To<EnemyViewMediator>();
+        
 
 
 
         injectionBinder.Bind<IPlayerModel>().To<PlayerModel>();
         injectionBinder.Bind<IEnemyModel>().To<EnemyModel>();
         injectionBinder.Bind<ICollectableModel>().To<CollectableModel>();
+       
     }
 
 }
