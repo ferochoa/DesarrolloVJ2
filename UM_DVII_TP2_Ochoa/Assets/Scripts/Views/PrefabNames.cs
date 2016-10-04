@@ -8,5 +8,7 @@
     public static string HUD_PREFAB = "HUD";
     public static string ENEMY_PREFAB = "Enemy";
     public static string COLLECTABLE_PREFAB = "Collectable";
+	public static string TIMERSB_PREFAB = "TimerSB";
+	public static string TIMERDES_PREFAB = "TimerDES";
 
 }

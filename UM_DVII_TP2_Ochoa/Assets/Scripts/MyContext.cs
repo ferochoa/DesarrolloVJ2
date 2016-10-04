@@ -20,13 +20,22 @@ public class MyContext : MVCSContext {
         commandBinder.Bind(GameEvents.ON_PLAYER_ADDED_TO_SCENE).To<ObjectsInstantiation>().To<EnemyInstantiation>().To<CollectableInstantiation>() ;
         commandBinder.Bind(GameEvents.ON_APLICATION_READY).To<InputInstantiation>();
         commandBinder.Bind(GameEvents.READY_TO_GO).To<HUDInstantiation>();
-        commandBinder.Bind(GameEvents.ON_COLLECTABLE_COLLISION).To<PlayerSpeedUp>();
+        commandBinder.Bind(GameEvents.TO_ADD_SPEED_BONUS).To<PlayerSpeedUp>();
+		commandBinder.Bind(GameEvents.ON_SPEED_BONUS_ADDED).To<TimerSBInstantiation>();
+		commandBinder.Bind(GameEvents.ON_SPEED_BONUS_ENDED).To<RestartSpeed>();
+		commandBinder.Bind(GameEvents.TO_ADD_POWER_BONUS).To<WeaponPowerUp>();
+		commandBinder.Bind(GameEvents.TO_DECREASE_ENEMY_SPEED).To<DecreaseEnemySpeed>();
+		commandBinder.Bind(GameEvents.ON_SPEED_PENALTY_ENDED).To<RestartEnemySpeed>();
+		commandBinder.Bind(GameEvents.ON_ENEMY_SPEED_DECREASED).To<TimerDESInstantiation>();
 
         mediationBinder.Bind<PlayerView>().To<PlayerViewMediator>();
         mediationBinder.Bind<InputView>().To<InputViewMediator>();
         mediationBinder.Bind<TimerView>().To<TimerViewMediator>();
         mediationBinder.Bind<HUDView>().To<HUDViewMediator>();
-        mediationBinder.Bind<EnemyView>().To<EnemyViewMediator>();
+		mediationBinder.Bind<EnemyView> ().To<EnemyViewMediator> ();
+		mediationBinder.Bind<TimerSBView>().To<TimerSBViewMediator>();
+		mediationBinder.Bind<TimerDESView>().To<TimerDESViewMediator>();
+		mediationBinder.Bind<WeaponView>().To<WeaponViewMediator>();
         
 
 
@@ -34,6 +43,7 @@ public class MyContext : MVCSContext {
         injectionBinder.Bind<IPlayerModel>().To<PlayerModel>();
         injectionBinder.Bind<IEnemyModel>().To<EnemyModel>();
         injectionBinder.Bind<ICollectableModel>().To<CollectableModel>();
+		injectionBinder.Bind<IWeaponModel>().To<WeaponModel>();
        
     }
 

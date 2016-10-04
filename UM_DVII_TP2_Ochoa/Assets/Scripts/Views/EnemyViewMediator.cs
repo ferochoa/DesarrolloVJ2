@@ -1,15 +1,28 @@
 ﻿using UnityEngine;
-using System.Collections;
+using strange.extensions.mediation.impl;
+using strange.extensions.dispatcher.eventdispatcher.api;
 
-public class EnemyViewMediator : MonoBehaviour {
+public class EnemyViewMediator : EventMediator
+{
 
-	// Use this for initialization
-	void Start () {
+	[Inject]
+	public EnemyView view { get; set; }
+
+	override public void OnRegister()
+	{
+		dispatcher.AddListener (GameEvents.ON_ENEMY_SPEED_DECREASED, updateSpeed);
+		dispatcher.AddListener (GameEvents.ON_ENEMY_SPEED_RESTARTED, updateSpeed);
 	
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	override public void OnRemove()
+	{
+		dispatcher.RemoveListener (GameEvents.ON_ENEMY_SPEED_DECREASED, updateSpeed);
+		dispatcher.RemoveListener (GameEvents.ON_ENEMY_SPEED_RESTARTED, updateSpeed);
+	}
+
+	void updateSpeed(IEvent evt)
+	{
+		float speed =(float)evt.data;       
+		view.updateSpeed (speed);
 	}
 }

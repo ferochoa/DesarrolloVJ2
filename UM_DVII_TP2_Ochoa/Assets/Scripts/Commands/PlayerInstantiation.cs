@@ -12,18 +12,18 @@ public class PlayerInstantiation :EventCommand {
 
     override public void Execute()
     {
-        Debug.Log("Instancia de mi player");
+       // Debug.Log("Instancia de mi player");
 
         GameObject go = GameObject.Instantiate(Resources.Load(PrefabNames.PLAYER_PREFAB)) as GameObject;
 
         go.name = "Player";
-        go.AddComponent<Rigidbody>();
+       
         go.AddComponent<PlayerView>();
-
+		go.AddComponent < WeaponView> ();
 
         PlayerView pv = go.GetComponent<PlayerView>();
         myPlayer.setSpeed();
-        pv.getSpeed(myPlayer.speed);
+        pv.updateSpeed(myPlayer.speed);
         go.transform.parent = contextView.transform;
 		dispatcher.Dispatch(GameEvents.ON_PLAYER_ADDED_TO_SCENE);
        

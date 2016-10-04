@@ -12,7 +12,7 @@ public class EnemyInstantiation : EventCommand
 
     public override void Execute()        
     {
-        Debug.Log("Instanciacion de enemigos");
+        //ebug.Log("Instanciacion de enemigos");
         for(int i = 0; i<2; i++)
         {
             

@@ -2,16 +2,18 @@
 using strange.extensions.mediation.impl;
 using strange.extensions.dispatcher.eventdispatcher.api;
 using System.Collections;
-using System;
+
 
 public class PlayerView : View {
 
     private const string ENEMY = "Enemy";
-    public string COLLECTABLE1 = "Collectable1";
-   
+    public string COLLECTABLE1 = "Collectable1"; 
+	public string COLLECTABLE2 = "Collectable2";
+	public string COLLECTABLE3 = "Collectable3"; 
 
-    Rigidbody rb;
-    public float speed;
+    private Rigidbody rb;
+    private float speed;
+
 
 
     [Inject]
@@ -20,7 +22,7 @@ public class PlayerView : View {
      internal void init()
     {
         rb = GetComponent<Rigidbody>();
-        speed =200; // prueba, esto no va aca
+        
        
     }
 
@@ -32,8 +34,19 @@ public class PlayerView : View {
         }*/
         if(col.gameObject.name == COLLECTABLE1)
         {
-            viewDispatcher.Dispatch(GameEvents.ON_COLLECTABLE_COLLISION, COLLECTABLE1);
+            viewDispatcher.Dispatch(GameEvents.TO_ADD_SPEED_BONUS, COLLECTABLE1);
         }
+		if(col.gameObject.name == COLLECTABLE2)
+		{
+			
+			viewDispatcher.Dispatch(GameEvents.TO_ADD_POWER_BONUS, COLLECTABLE2);
+		}
+		if(col.gameObject.name == COLLECTABLE3)
+		{
+
+			viewDispatcher.Dispatch(GameEvents.TO_DECREASE_ENEMY_SPEED, COLLECTABLE3);
+		}
+
     }
 
    
@@ -59,8 +72,11 @@ public class PlayerView : View {
 	{
         rb.AddForce(new Vector3(0, 1, 0) * speed, ForceMode.Force);
     }
-    public void getSpeed(float speed)
+    public void updateSpeed(float speed)
     {
+		this.speed = speed;
         Debug.Log("Speed: "+speed);
     }
+
+
 }

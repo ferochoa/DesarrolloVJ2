@@ -11,7 +11,7 @@ public class TimerView : View
     public IEventDispatcher viewDispatcher { get; set; }
 
 
-    public float maxTime = 10f;
+    public float maxTime = 120f;
     private Text timerText;
 
 
@@ -31,4 +31,5 @@ public class TimerView : View
         }
 
     }
+
 }

@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using strange.extensions.mediation.impl;
+using strange.extensions.dispatcher.eventdispatcher.api;
 
-public class EnemyView : MonoBehaviour {
+public class EnemyView : View {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public void updateSpeed(float speed)
+	{
+		
+		Debug.Log ("Enemy speed: " + speed);
 	}
 }

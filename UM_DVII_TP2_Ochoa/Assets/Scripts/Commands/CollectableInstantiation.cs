@@ -13,7 +13,7 @@ public class CollectableInstantiation : EventCommand
     public override void Execute()
     {
         
-        Debug.Log("Instanciacion de coleccionables");
+       //Debug.Log("Instanciacion de coleccionables");
         for (int i = 0; i < 3; i++)
         {
             ICollectableModel collectableModel = injectionBinder.GetInstance<ICollectableModel>();
@@ -56,7 +56,7 @@ public class CollectableInstantiation : EventCommand
            // Debug.Log(collectableName + " agregado a la escena");
            // Debug.Log(collectableName + " tipo: " + collectableModel.type);
 
-            injectionBinder.Bind(collectableName).To<EnemyModel>();
+			injectionBinder.Bind (collectableName).To (collectableModel);
 
         }
     }

@@ -10,7 +10,7 @@ public class ObjectsInstantiation : EventCommand
    
     override public void Execute()
     {
-        Debug.Log("Instancia de objetos staticos");
+       //Debug.Log("Instancia de objetos staticos");
       
         GameObject go = GameObject.Instantiate(Resources.Load(PrefabNames.OBJECT1_PREFAB)) as GameObject;    
        
