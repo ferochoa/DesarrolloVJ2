@@ -12,11 +12,7 @@ public class TimerSBView : View
 
 
 	public float speedBonusTime = 30f;
-	public GameObject go;
 
-	internal void init(){
-		this.go = GameObject.Find ("TimerSB");
-	}
 
 	void Update()
 	{
@@ -25,7 +21,7 @@ public class TimerSBView : View
 
 		if(speedBonusTime <=0){
 			viewDispatcher.Dispatch (GameEvents.ON_SPEED_BONUS_ENDED);
-			Destroy (go);
+			Destroy (this.gameObject);
 		}
 	}
 

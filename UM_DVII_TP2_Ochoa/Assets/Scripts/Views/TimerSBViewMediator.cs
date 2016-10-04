@@ -10,7 +10,7 @@ public class TimerSBViewMediator : EventMediator
 
 	override public void OnRegister()
 	{
-		view.init ();
+		
 		view.viewDispatcher.AddListener (GameEvents.ON_SPEED_BONUS_ENDED, onSpeedBonusEnded);
 
 	}

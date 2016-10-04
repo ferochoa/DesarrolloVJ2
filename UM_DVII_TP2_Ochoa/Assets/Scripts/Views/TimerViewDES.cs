@@ -10,11 +10,6 @@ public class TimerDESView :View {
 
 
 	public float speedPenaltyTime = 15f;
-	public GameObject go;
-
-	internal void init(){
-		this.go = GameObject.Find ("TimerDES");
-	}
 
 	void Update()
 	{
@@ -23,7 +18,7 @@ public class TimerDESView :View {
 
 		if(speedPenaltyTime <=0){
 			viewDispatcher.Dispatch (GameEvents.ON_SPEED_PENALTY_ENDED);
-			Destroy (go);
+			Destroy (this.gameObject);
 		}
 	}
 
