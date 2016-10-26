@@ -7,7 +7,10 @@ public interface ICollectableModel
     float speedBonus { get; set; }
 	float powerBonus{ get; set; }
 	float speedPenalty{ get; set; }
+	string collEvent {get;set;}
+
     void setSpeedBonus();
 	void setPowerBonus();
 	void setSpeedPenalty();
+
 }

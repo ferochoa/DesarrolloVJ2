@@ -27,6 +27,7 @@ public class GameEvents : MonoBehaviour {
 	public static string ON_ENEMY_SPEED_RESTARTED = "ON_ENEMY_SPEED_RESTARTED";
 	public static string ON_ENEMY_SPEED_DECREASED = "ON_ENEMY_SPEED_DECREASED";
 	public static string SET_TIMER_FLAG = "SET_TIMER_FLAG";
+	public static string ON_PLAYER_COLLISION = "ON_PLAYER_COLLISION";
 
 
 }

@@ -1,22 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Views\TimerViewDES.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\collectables.json">
     <Files>
-      <File FileName="Assets\Scripts\Views\EnemyView.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Views\EnemyViewMediator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Commands\DecreaseEnemySpeed.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Commands\PlayerSpeedUp.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Events\GameEvents.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MyContext.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Views\TimerSBView.cs" Line="28" Column="2" />
-      <File FileName="Assets\Scripts\Views\TimerSBViewMediator.cs" Line="13" Column="3" />
-      <File FileName="Assets\Scripts\Views\TimerViewDES.cs" Line="26" Column="1" />
-      <File FileName="Assets\Scripts\Views\TimerDESViewMediator.cs" Line="24" Column="59" />
-      <File FileName="Assets\Scripts\Commands\RestartEnemySpeed.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Commands\RestartSpeed.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Views\PrefabNames.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Commands\TimerSBInstantiation.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Commands\TimerDESInstantiation.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Views\PlayerView.cs" Line="20" Column="57" />
+      <File FileName="Assets\Scripts\Views\PlayerViewMediator.cs" Line="11" Column="38" />
+      <File FileName="Assets\Scripts\Views\CollectableView.cs" Line="13" Column="2" />
+      <File FileName="Assets\Scripts\Views\CollectableViewMediator.cs" Line="23" Column="56" />
+      <File FileName="Assets\Scripts\Events\GameEvents.cs" Line="29" Column="57" />
+      <File FileName="Assets\Scripts\Commands\CollectableInstantiation.cs" Line="22" Column="6" />
+      <File FileName="Assets\Resources\collectables.json" Line="24" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

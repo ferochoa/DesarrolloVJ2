@@ -12,7 +12,7 @@ public class EnemyInstantiation : EventCommand
 
     public override void Execute()        
     {
-        //ebug.Log("Instanciacion de enemigos");
+    
         for(int i = 0; i<2; i++)
         {
             
@@ -35,13 +35,12 @@ public class EnemyInstantiation : EventCommand
 
 
             }
-            goEnemy.AddComponent<Rigidbody>();
+          
             goEnemy.AddComponent<EnemyView>();
             goEnemy.transform.parent = contextView.transform;
             
          
-           // Debug.Log(enemyName+" agregado a la escena");
-           // Debug.Log(enemyName + " vida: " + enemyModel.health);
+           
 
             injectionBinder.Bind(enemyName).To<EnemyModel>();
 

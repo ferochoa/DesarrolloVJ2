@@ -64,21 +64,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Commands\CollectableInstantiation.cs" />
+    <Compile Include="Assets\Scripts\Commands\DecreaseEnemySpeed.cs" />
     <Compile Include="Assets\Scripts\Commands\EnemyInstantiation.cs" />
     <Compile Include="Assets\Scripts\Commands\HUDInstantiation.cs" />
     <Compile Include="Assets\Scripts\Commands\InputInstantiation.cs" />
     <Compile Include="Assets\Scripts\Commands\ObjectsInstantiation.cs" />
     <Compile Include="Assets\Scripts\Commands\PlayerInstantiation.cs" />
     <Compile Include="Assets\Scripts\Commands\PlayerSpeedUp.cs" />
+    <Compile Include="Assets\Scripts\Commands\RestartEnemySpeed.cs" />
+    <Compile Include="Assets\Scripts\Commands\RestartSpeed.cs" />
+    <Compile Include="Assets\Scripts\Commands\TimerDESInstantiation.cs" />
+    <Compile Include="Assets\Scripts\Commands\TimerSBInstantiation.cs" />
+    <Compile Include="Assets\Scripts\Commands\WeaponPowerUp.cs" />
     <Compile Include="Assets\Scripts\Events\GameEvents.cs" />
     <Compile Include="Assets\Scripts\Models\CollectableModel.cs" />
     <Compile Include="Assets\Scripts\Models\EnemyModel.cs" />
     <Compile Include="Assets\Scripts\Models\ICollectablesModel.cs" />
     <Compile Include="Assets\Scripts\Models\IEnemyModel.cs" />
     <Compile Include="Assets\Scripts\Models\IPlayerModel.cs" />
+    <Compile Include="Assets\Scripts\Models\IWeaponModel.cs" />
     <Compile Include="Assets\Scripts\Models\PlayerModel.cs" />
+    <Compile Include="Assets\Scripts\Models\WeaponModel.cs" />
     <Compile Include="Assets\Scripts\MyContext.cs" />
     <Compile Include="Assets\Scripts\StrangeInitializer.cs" />
+    <Compile Include="Assets\Scripts\Views\CollectableView.cs" />
+    <Compile Include="Assets\Scripts\Views\CollectableViewMediator.cs" />
     <Compile Include="Assets\Scripts\Views\EnemyView.cs" />
     <Compile Include="Assets\Scripts\Views\EnemyViewMediator.cs" />
     <Compile Include="Assets\Scripts\Views\HUDView.cs" />
@@ -89,8 +99,15 @@
     <Compile Include="Assets\Scripts\Views\PlayerView.cs" />
     <Compile Include="Assets\Scripts\Views\PlayerViewMediator.cs" />
     <Compile Include="Assets\Scripts\Views\PrefabNames.cs" />
+    <Compile Include="Assets\Scripts\Views\TimerDESViewMediator.cs" />
+    <Compile Include="Assets\Scripts\Views\TimerSBView.cs" />
+    <Compile Include="Assets\Scripts\Views\TimerSBViewMediator.cs" />
     <Compile Include="Assets\Scripts\Views\TimerView.cs" />
+    <Compile Include="Assets\Scripts\Views\TimerViewDES.cs" />
     <Compile Include="Assets\Scripts\Views\TimerViewMediator.cs" />
+    <Compile Include="Assets\Scripts\Views\WeaponView.cs" />
+    <Compile Include="Assets\Scripts\Views\WeaponViewMediator.cs" />
+    <Compile Include="Assets\SimpleJSON.cs" />
     <Compile Include="Assets\strange\ReadMe.cs" />
     <Compile Include="Assets\strange\extensions\command\api\CommandExceptionType.cs" />
     <Compile Include="Assets\strange\extensions\command\api\CommandKeys.cs" />

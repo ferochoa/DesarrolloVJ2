@@ -7,6 +7,7 @@ public class CollectableModel : ICollectableModel
     public float speedBonus { get; set; }
 	public float powerBonus{ get; set; }
 	public float speedPenalty{ get; set; }
+	public string collEvent{ get; set; }
 
     public void setSpeedBonus()
     {

@@ -20,6 +20,7 @@ public class MyContext : MVCSContext {
         commandBinder.Bind(GameEvents.ON_PLAYER_ADDED_TO_SCENE).To<ObjectsInstantiation>().To<EnemyInstantiation>().To<CollectableInstantiation>() ;
         commandBinder.Bind(GameEvents.ON_APLICATION_READY).To<InputInstantiation>();
         commandBinder.Bind(GameEvents.READY_TO_GO).To<HUDInstantiation>();
+		commandBinder.Bind (GameEvents.ON_PLAYER_COLLISION).To<SetEventCollectable>();
         commandBinder.Bind(GameEvents.TO_ADD_SPEED_BONUS).To<PlayerSpeedUp>();
 		commandBinder.Bind(GameEvents.ON_SPEED_BONUS_ADDED).To<TimerSBInstantiation>();
 		commandBinder.Bind(GameEvents.ON_SPEED_BONUS_ENDED).To<RestartSpeed>();
@@ -36,6 +37,7 @@ public class MyContext : MVCSContext {
 		mediationBinder.Bind<TimerSBView>().To<TimerSBViewMediator>();
 		mediationBinder.Bind<TimerDESView>().To<TimerDESViewMediator>();
 		mediationBinder.Bind<WeaponView>().To<WeaponViewMediator>();
+		mediationBinder.Bind<CollectableView>().To<CollectableViewMediator>();
         
 
 

@@ -28,10 +28,7 @@ public class PlayerView : View {
 
     void OnCollisionEnter(Collision col)
     {
-       /* if(col.gameObject.tag == ENEMY)
-        {
-            viewDispatcher.Dispatch(GameEvents.ON_ENEMY_COLLISION);
-        }*/
+     
         if(col.gameObject.name == COLLECTABLE1)
         {
             viewDispatcher.Dispatch(GameEvents.TO_ADD_SPEED_BONUS, COLLECTABLE1);
@@ -46,6 +43,7 @@ public class PlayerView : View {
 
 			viewDispatcher.Dispatch(GameEvents.TO_DECREASE_ENEMY_SPEED, COLLECTABLE3);
 		}
+
 
     }
 
