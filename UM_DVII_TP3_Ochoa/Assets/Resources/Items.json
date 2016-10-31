@@ -1,0 +1,35 @@
+"items":
+[
+               {
+                   "name" : "Weapon1",
+				   "tag": "Weapon",
+				   "prefabName":"Weapon",
+		           "posX": "-4.5",
+                   "posY": "0.5"	,
+                   "posZ": "0",
+               },
+               {
+                   "name" : "Weapon2",
+				   "tag": "Weapon",
+		           "prefabName":"Weapon",
+		           "posX": "0.4",
+                   "posY": "0.5"	,
+                   "posZ": "3",
+               },
+               {
+                   "name" : "HealthPack1",
+				   "tag":"HealthPack",
+		           "prefabName":"HealthPack",
+		           "posX": "0.9",
+                   "posY": "0.3"	,
+                   "posZ": "-4.5",
+               },
+               {
+                   "name" : "HealthPack2",
+				   "tag":"HealthPack",
+		           "prefabName":"HealthPack",
+		           "posX": "-3.5",
+                   "posY": "0.3"	,
+                   "posZ": "-1",
+               }
+]
