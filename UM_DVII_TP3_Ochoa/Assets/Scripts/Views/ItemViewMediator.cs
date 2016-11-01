@@ -1,15 +1,24 @@
 ﻿using UnityEngine;
-using System.Collections;
+using strange.extensions.mediation.impl;
+using strange.extensions.dispatcher.eventdispatcher.api;
 
-public class ItemViewMediator : MonoBehaviour {
+public class ItemViewMediator : EventMediator {
 
-	// Use this for initialization
-	void Start () {
-	
+	[Inject]
+	public ItemView view { get; set; }
+
+	override public void OnRegister()
+	{
+		view.viewDispatcher.AddListener (GameEvents.ITEM_PICKED_UP, itemPickedUp);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	override public void OnRemove()
+	{
+		view.viewDispatcher.RemoveListener (GameEvents.ITEM_PICKED_UP, itemPickedUp);
+	}
+
+	void itemPickedUp()
+	{
+		dispatcher.Dispatch (GameEvents.ITEM_PICKED_UP);
 	}
 }

@@ -1,15 +1,26 @@
 ﻿using UnityEngine;
+using strange.extensions.mediation.impl;
+using strange.extensions.dispatcher.eventdispatcher.api;
 using System.Collections;
 
-public class ItemView : MonoBehaviour {
+public class ItemView : View {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	[Inject]
+	public IEventDispatcher viewDispatcher { get; set; }
+
+
+
+	private const string PLAYER = "Player";
+
+	void OnCollisionEnter(Collision col)
+	{
+
+		if (col.gameObject.name == PLAYER)
+		{
+			//viewDispatcher.Dispatch (GameEvents.ITEM_PICKED_UP, (parametro q tengo q pasar));
+
+		}
+
 	}
 }

@@ -11,12 +11,14 @@ public class InventoryViewMediator : EventMediator {
 	{
 		view.closeInventary ();
 		dispatcher.AddListener (GameEvents.ON_INVENTORY_MANIPULATION, openInventory);
+		dispatcher.AddListener (GameEvents.ITEM_PICKED_UP, addItem);
 
 	}
 
 	override public void OnRemove()
 	{
 		dispatcher.RemoveListener (GameEvents.ON_INVENTORY_MANIPULATION, openInventory);
+		dispatcher.AddListener (GameEvents.ITEM_PICKED_UP, addItem);
 	}
 
 	void openInventory()
@@ -28,5 +30,10 @@ public class InventoryViewMediator : EventMediator {
 		{
 			view.openInventory ();
 		}
+	}
+	void addItem(IEvent evt)
+	{
+
+		view.addItem ();
 	}
 }
