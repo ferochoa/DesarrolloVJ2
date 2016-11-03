@@ -4,15 +4,18 @@ using strange.extensions.context.api;
 
 
 
+
 public class ItemInstantiation : EventCommand
 {
 	[Inject(ContextKeys.CONTEXT_VIEW)]
 	public GameObject contextView { get; set; }
 
 
-
 	public override void Execute()
 	{
+
+
+
 		TextAsset file = Resources.Load("Items") as TextAsset;
 
 		var n = SimpleJSON.JSON.Parse(file.text);
@@ -26,6 +29,8 @@ public class ItemInstantiation : EventCommand
 			float posX = n [i] ["posX"].AsFloat;
 			float posY = n [i] ["posY"].AsFloat;
 			float posZ = n [i] ["posZ"].AsFloat;
+
+			itemModel.itemPower = n [i] ["power"].AsFloat;
 
 
 			GameObject goItem = GameObject.Instantiate(Resources.Load(n [i]["prefabName"].Value)) as GameObject;

@@ -30,4 +30,5 @@ public class GameEvents : MonoBehaviour {
 	public static string ON_PLAYER_COLLISION = "ON_PLAYER_COLLISION";
 	public static string ON_INVENTORY_MANIPULATION = "ON_INVENTORY_MANIPULATION";
 	public static string ITEM_PICKED_UP = "ITEM_PICKED_UP";
+	public static string ADD_ITEM = "ADD_ITEM";
 }

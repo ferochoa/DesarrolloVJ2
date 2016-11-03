@@ -8,7 +8,8 @@ public class InventoryView : View {
 
 	internal bool open;
 
-	public List<ItemView> itemView = new List<ItemView>();
+	public List<IItemModel> items = new List<IItemModel>();
+
 
 
 	public void closeInventary()
@@ -26,11 +27,16 @@ public class InventoryView : View {
 		this.gameObject.SetActive (true);
 		open = true;
 	} 
-		
-	public void addItem()
+
+	public void addItem(IItemModel item)
 	{
-		Debug.Log ("ok");
+		items.Add (item);
+		Debug.Log ("Item Agregado");
+		Debug.Log (items.Count);
+
 	}
+		
+
 	}
 	
 	

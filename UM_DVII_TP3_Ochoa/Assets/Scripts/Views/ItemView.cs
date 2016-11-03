@@ -18,7 +18,7 @@ public class ItemView : View {
 
 		if (col.gameObject.name == PLAYER)
 		{
-			//viewDispatcher.Dispatch (GameEvents.ITEM_PICKED_UP, (parametro q tengo q pasar));
+			viewDispatcher.Dispatch (GameEvents.ITEM_PICKED_UP,this.gameObject.name);
 
 		}
 

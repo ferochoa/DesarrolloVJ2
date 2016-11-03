@@ -15,7 +15,7 @@ public class SlotInstantiation :EventCommand {
 		for (int i = 0; i < TOTAL_SLOTS; i++) {
 			GameObject goSlot = GameObject.Instantiate (Resources.Load (PrefabNames.SLOT_PREFAB)) as GameObject;
 			goSlot.name = "Slot "+(i+1);
-			goSlot.transform.SetParent (contextView.transform.FindChild ("Inventory").FindChild ("InventoryPanel").transform);
+			goSlot.transform.SetParent (contextView.transform.FindChild ("Inventory").FindChild ("InventoryPanel").transform,false);
 		}
 	}
 

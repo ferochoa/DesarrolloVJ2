@@ -29,6 +29,7 @@ public class MyContext : MVCSContext {
 		commandBinder.Bind(GameEvents.TO_DECREASE_ENEMY_SPEED).To<DecreaseEnemySpeed>();
 		commandBinder.Bind(GameEvents.ON_SPEED_PENALTY_ENDED).To<RestartEnemySpeed>();
 		commandBinder.Bind(GameEvents.ON_ENEMY_SPEED_DECREASED).To<TimerDESInstantiation>();
+		commandBinder.Bind (GameEvents.ITEM_PICKED_UP).To<ItemToAdd> ();
 
         mediationBinder.Bind<PlayerView>().To<PlayerViewMediator>();
         mediationBinder.Bind<InputView>().To<InputViewMediator>();
