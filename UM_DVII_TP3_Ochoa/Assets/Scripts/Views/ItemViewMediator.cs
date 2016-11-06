@@ -19,6 +19,6 @@ public class ItemViewMediator : EventMediator {
 
 	void itemPickedUp()
 	{
-		dispatcher.Dispatch (GameEvents.ITEM_PICKED_UP, view.gameObject.name);
+		dispatcher.Dispatch (GameEvents.ITEM_PICKED_UP, view.gameObject);
 	}
 }

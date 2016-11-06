@@ -12,5 +12,7 @@
 	public static string TIMERDES_PREFAB = "TimerDES";
 	public static string INVENTORY_PREFAB = "Inventory";
 	public static string SLOT_PREFAB = "Slot";
+	public static string EMPTY_SPRITE = "Empty";
+	public static string FULL_SPRITE = "Full";
 
 }

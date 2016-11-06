@@ -30,6 +30,7 @@ public class MyContext : MVCSContext {
 		commandBinder.Bind(GameEvents.ON_SPEED_PENALTY_ENDED).To<RestartEnemySpeed>();
 		commandBinder.Bind(GameEvents.ON_ENEMY_SPEED_DECREASED).To<TimerDESInstantiation>();
 		commandBinder.Bind (GameEvents.ITEM_PICKED_UP).To<ItemToAdd> ();
+		commandBinder.Bind (GameEvents.PAINT_SLOT_ITEM_INVENTORY).To<SlotManipulation> ();
 
         mediationBinder.Bind<PlayerView>().To<PlayerViewMediator>();
         mediationBinder.Bind<InputView>().To<InputViewMediator>();
@@ -48,8 +49,10 @@ public class MyContext : MVCSContext {
 
         injectionBinder.Bind<IPlayerModel>().To<PlayerModel>();
         injectionBinder.Bind<IEnemyModel>().To<EnemyModel>();
-        injectionBinder.Bind<ICollectableModel>().To<CollectableModel>();
-		injectionBinder.Bind<IItemModel>().To<WeaponModel>();
+		injectionBinder.Bind<ICollectableModel> ().To<CollectableModel> ();
+		injectionBinder.Bind<IItemModel> ().To<ItemModel> ().ToSingleton ();
+		injectionBinder.Bind<IInventoryModel> ().To<InventoryModel> ().ToSingleton();
+
        
     }
 

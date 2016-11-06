@@ -9,6 +9,8 @@ public class InputView : View
     [Inject]
     public IEventDispatcher viewDispatcher { get; set; }
 
+	internal int item_n;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
@@ -40,6 +42,42 @@ public class InputView : View
 		{
 			
 			viewDispatcher.Dispatch(GameEvents.ON_INVENTORY_MANIPULATION);
+
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			item_n = 1;
+			viewDispatcher.Dispatch(GameEvents.ON_SELECT_ITEM , item_n);
+
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			item_n = 2;
+			viewDispatcher.Dispatch(GameEvents.ON_SELECT_ITEM , item_n);
+
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			item_n = 3;
+			viewDispatcher.Dispatch(GameEvents.ON_SELECT_ITEM , item_n);
+
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			item_n = 4;
+			viewDispatcher.Dispatch(GameEvents.ON_SELECT_ITEM , item_n);
+
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			item_n = 5;
+			viewDispatcher.Dispatch(GameEvents.ON_SELECT_ITEM , item_n);
+
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha1))
+		{
+			item_n = 6;
+			viewDispatcher.Dispatch(GameEvents.ON_SELECT_ITEM , item_n);
 
 		}
 

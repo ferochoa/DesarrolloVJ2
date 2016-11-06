@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class WeaponModel : IItemModel {
+public class ItemModel : IItemModel {
 
 	public float itemPower { get; set;}
 	public string name { get; set; }

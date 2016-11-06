@@ -6,10 +6,12 @@ using System.Collections.Generic;
 
 public class InventoryView : View {
 
+	[Inject]
+	public IEventDispatcher viewDispatcher { get; set; }
+
 	internal bool open;
-
-	public List<IItemModel> items = new List<IItemModel>();
-
+	internal int totalItems = 0;
+	internal const int ITEMSCAPACITY = 6;
 
 
 	public void closeInventary()
@@ -28,16 +30,18 @@ public class InventoryView : View {
 		open = true;
 	} 
 
-	public void addItem(IItemModel item)
+
+	public void itemControl()
 	{
-		items.Add (item);
-		Debug.Log ("Item Agregado");
-		Debug.Log (items.Count);
-
-	}
 		
+		viewDispatcher.Dispatch (GameEvents.PAINT_SLOT_ITEM_INVENTORY, totalItems);
+		totalItems++;
+		if (totalItems == ITEMSCAPACITY) {
+			totalItems = 0;
+		}
+
+	}
 
 	}
 	
 	
-

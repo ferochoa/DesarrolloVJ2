@@ -14,15 +14,15 @@ public class InventoryViewMediator : EventMediator {
 	{
 		view.closeInventary ();
 		dispatcher.AddListener (GameEvents.ON_INVENTORY_MANIPULATION, openInventory);
-		dispatcher.AddListener (GameEvents.ADD_ITEM, addItem);
-
+		dispatcher.AddListener (GameEvents.ON_ITEM_ADDED_TO_INVENTORY, itemControl);
+		view.viewDispatcher.AddListener (GameEvents.PAINT_SLOT_ITEM_INVENTORY, paintSlot);
 	}
 
 	override public void OnRemove()
 	{
 		dispatcher.RemoveListener (GameEvents.ON_INVENTORY_MANIPULATION, openInventory);
-		dispatcher.RemoveListener (GameEvents.ADD_ITEM, addItem);
-
+		dispatcher.RemoveListener (GameEvents.ON_ITEM_ADDED_TO_INVENTORY, itemControl);
+		view.viewDispatcher.RemoveListener (GameEvents.PAINT_SLOT_ITEM_INVENTORY, paintSlot);
 	}
 
 	void openInventory()
@@ -36,10 +36,14 @@ public class InventoryViewMediator : EventMediator {
 		}
 	}
 
-	void addItem(IEvent evt)
+	void itemControl()
 	{
-		IItemModel item = (IItemModel)evt.data;
-		view.addItem (item);
+		view.itemControl ();
+	}
+
+	void paintSlot()
+	{
+		dispatcher.Dispatch (GameEvents.PAINT_SLOT_ITEM_INVENTORY, view.totalItems);
 	}
 
 }

@@ -31,7 +31,7 @@ public class ItemInstantiation : EventCommand
 			float posZ = n [i] ["posZ"].AsFloat;
 
 			itemModel.itemPower = n [i] ["power"].AsFloat;
-
+			itemModel.name = itemName;
 
 			GameObject goItem = GameObject.Instantiate(Resources.Load(n [i]["prefabName"].Value)) as GameObject;
 
