@@ -8,11 +8,10 @@ public class UsingItems :EventCommand {
 
 	public override void Execute(){
 
-		Debug.Log ("estoy aca");
-		string viewName = (string)evt.data;
 
-		IItemModel itemModel = injectionBinder.GetBinding(viewName).value as IItemModel;
-		Debug.Log (itemModel.ItemEvent);
-		dispatcher.Dispatch (itemModel.ItemEvent, viewName);
+		string viewName = (string)evt.data;
+		IweaponHealhPackModel itemModel = injectionBinder.GetBinding(viewName).value as IweaponHealhPackModel;
+		//Debug.Log (itemModel.itemEvent);
+		dispatcher.Dispatch (itemModel.itemEvent, viewName);
 	}
 }

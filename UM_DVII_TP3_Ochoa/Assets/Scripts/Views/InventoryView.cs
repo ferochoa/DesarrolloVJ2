@@ -41,7 +41,7 @@ public class InventoryView : View {
 	{
 		position = pos;
 		viewDispatcher.Dispatch (GameEvents.PAINT_SLOT_ITEM_INVENTORY,position);
-		Debug.Log (position);
+
 
 
 

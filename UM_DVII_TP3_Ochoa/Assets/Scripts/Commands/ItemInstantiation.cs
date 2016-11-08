@@ -23,15 +23,15 @@ public class ItemInstantiation : EventCommand
 
 		for (int i = 0; i < n.Count; i++)
 		{
-			IItemModel itemModel = injectionBinder.GetInstance<IItemModel>();
+			IweaponHealhPackModel whModel = injectionBinder.GetInstance<IweaponHealhPackModel>();
 			string itemName = n [i]["name"].Value;  
 			string itemTag = n [i] ["tag"].Value;
 			float posX = n [i] ["posX"].AsFloat;
 			float posY = n [i] ["posY"].AsFloat;
 			float posZ = n [i] ["posZ"].AsFloat;
-
-			itemModel.itemPower = n [i] ["power"].AsFloat;
-			itemModel.name = itemName;
+			whModel.itemEvent = n [i] ["event"];
+			whModel.itemPower = n [i] ["power"].AsFloat;
+			whModel.name = itemName;
 
 			GameObject goItem = GameObject.Instantiate(Resources.Load(n [i]["prefabName"].Value)) as GameObject;
 
@@ -43,7 +43,7 @@ public class ItemInstantiation : EventCommand
 			goItem.transform.parent = contextView.transform;         
 
 
-			injectionBinder.Bind (itemName).To (itemModel);
+			injectionBinder.Bind (itemName).To (whModel);
 
 		}
 	}

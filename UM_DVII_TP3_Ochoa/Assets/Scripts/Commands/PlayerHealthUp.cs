@@ -6,26 +6,27 @@ public class PlayerHealthUp : EventCommand {
 
 	private float newHealth;
 	private float playerHealth;
-	private float maxHealth;
+	private const float MAX_HEALTH = 200;
 
 	[Inject]
 	public IPlayerModel myPlayer{ get; set; }
 
 	public override void Execute(){
 
-		Debug.Log ("llegue aca");
+
 		string viewName = (string)evt.data;
-		IItemModel itemModel = injectionBinder.GetBinding (viewName).value as IItemModel;
+		IweaponHealhPackModel itemModel = injectionBinder.GetBinding (viewName).value as IweaponHealhPackModel;
 		playerHealth = myPlayer.health;
 
 		newHealth = playerHealth + itemModel.itemPower;
-		//Debug.Log (itemModel.itemPower);
-		if (newHealth > 300)
+
+		if (newHealth > MAX_HEALTH)
 		{
-			newHealth =150;
+			newHealth = playerHealth;
 		}
-		Debug.Log ("despacho aca");
-		//dispatcher.Dispatch (GameEvents.ON_HEALTH_BONUS_ADDED, newHealth);
+
+
+		dispatcher.Dispatch (GameEvents.ON_HEALTH_BONUS_ADDED, newHealth);
 	
 	}
 }

@@ -26,28 +26,7 @@ public class PlayerView : View {
        
     }
 
-    void OnCollisionEnter(Collision col)
-    {
-     
-        if(col.gameObject.name == COLLECTABLE1)
-        {
-            viewDispatcher.Dispatch(GameEvents.TO_ADD_SPEED_BONUS, COLLECTABLE1);
-        }
-		if(col.gameObject.name == COLLECTABLE2)
-		{
-			
-			viewDispatcher.Dispatch(GameEvents.TO_ADD_POWER_BONUS, COLLECTABLE2);
-		}
-		if(col.gameObject.name == COLLECTABLE3)
-		{
-
-			viewDispatcher.Dispatch(GameEvents.TO_DECREASE_ENEMY_SPEED, COLLECTABLE3);
-		}
-
-
-    }
-
-   
+      
 
     public void playerGoLeft()
     {
@@ -76,5 +55,9 @@ public class PlayerView : View {
         Debug.Log("Speed: "+speed);
     }
 
+	public void updateHealth(float health)
+	{
+		Debug.Log ("Health: " + health);
 
+	}
 }

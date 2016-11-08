@@ -23,7 +23,9 @@ public class PlayerInstantiation :EventCommand {
 
         PlayerView pv = go.GetComponent<PlayerView>();
         myPlayer.setSpeed();
+		myPlayer.health = 100;
         pv.updateSpeed(myPlayer.speed);
+		pv.updateHealth (myPlayer.health);
         go.transform.parent = contextView.transform;
 		dispatcher.Dispatch(GameEvents.ON_PLAYER_ADDED_TO_SCENE);
        

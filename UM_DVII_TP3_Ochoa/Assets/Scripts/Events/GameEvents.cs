@@ -36,4 +36,7 @@ public class GameEvents : MonoBehaviour {
 	public static string ON_SELECT_ITEM_BY_KEY = "ON_SELECT_ITEM_BY_KEY";
 	public static string ON_ITEM_SELECTED = "ON_ITEM_SELECTED";
 	public static string USE_ITEM = "USE_ITEM";
+	public static string ON_USE_HEALTH_PACK ="ON_USE_HEALTH_PACK";
+	public static string ON_CHANGE_WEAPON ="ON_CHANGE_WEAPON";
+	public static string ON_HEALTH_BONUS_ADDED ="ON_HEALTH_BONUS_ADDED";
 }

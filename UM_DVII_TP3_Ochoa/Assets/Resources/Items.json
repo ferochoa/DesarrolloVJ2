@@ -8,6 +8,7 @@
                    "posY": "0.5"	,
                    "posZ": "0",
 				   "power": "200",
+			       "event": "ON_CHANGE_WEAPON", 
 
                },
                {
@@ -18,6 +19,7 @@
                    "posY": "0.5"	,
                    "posZ": "3",
 				   "power": "300",
+				   "event": "ON_CHANGE_WEAPON", 
                },
                {
                    "name" : "HealthPack1",
@@ -27,6 +29,7 @@
                    "posY": "0.3"	,
                    "posZ": "-4.5",
 		           "power": "25",
+				   "event": "ON_USE_HEALTH_PACK", 
                },
                {
                    "name" : "HealthPack2",
@@ -36,5 +39,6 @@
                    "posY": "0.3"	,
                    "posZ": "-1",
 		           "power": "50",
+		           "event": "ON_USE_HEALTH_PACK",
                }
 ]

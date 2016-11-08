@@ -11,10 +11,7 @@ public class PlayerViewMediator : EventMediator
     override public void OnRegister()
     {
         view.init();
-        //view.viewDispatcher.AddListener(GameEvents.ON_ENEMY_COLLISION, onEnemyCollision);
-        view.viewDispatcher.AddListener(GameEvents.TO_ADD_SPEED_BONUS, toAddSpeedBonus); 
-		view.viewDispatcher.AddListener (GameEvents.TO_ADD_POWER_BONUS, toAddPowerBonus);
-		view.viewDispatcher.AddListener (GameEvents.TO_DECREASE_ENEMY_SPEED, toDecreaseEnemySpeed);
+        
         dispatcher.AddListener(GameEvents.ON_PLAYER_GO_LEFT, playerGoLeft);
 		dispatcher.AddListener(GameEvents.ON_PLAYER_GO_RIGHT, playerGoRight);
 		dispatcher.AddListener(GameEvents.ON_PLAYER_GO_FOWARD, playerGoFoward);
@@ -22,13 +19,12 @@ public class PlayerViewMediator : EventMediator
 		dispatcher.AddListener(GameEvents.ON_PLAYER_JUMP, playerJump);
 		dispatcher.AddListener (GameEvents.ON_SPEED_BONUS_ADDED, updateSpeed);
 		dispatcher.AddListener (GameEvents.ON_SPEED_RESTARTED, updateSpeed);
+		dispatcher.AddListener (GameEvents.ON_HEALTH_BONUS_ADDED, updateHealth);
     }
 
     override public void OnRemove()
     {
-        view.viewDispatcher.RemoveListener(GameEvents.TO_ADD_SPEED_BONUS, toAddSpeedBonus);
-		view.viewDispatcher.RemoveListener(GameEvents.TO_ADD_POWER_BONUS, toAddPowerBonus);
-		view.viewDispatcher.RemoveListener (GameEvents.TO_DECREASE_ENEMY_SPEED, toDecreaseEnemySpeed);
+      
         dispatcher.RemoveListener(GameEvents.ON_PLAYER_GO_LEFT, playerGoLeft);
 		dispatcher.RemoveListener(GameEvents.ON_PLAYER_GO_RIGHT, playerGoRight);
 		dispatcher.RemoveListener(GameEvents.ON_PLAYER_GO_FOWARD, playerGoFoward);
@@ -36,6 +32,7 @@ public class PlayerViewMediator : EventMediator
 		dispatcher.RemoveListener(GameEvents.ON_PLAYER_JUMP, playerJump);
 		dispatcher.RemoveListener (GameEvents.ON_SPEED_BONUS_ADDED, updateSpeed);
 		dispatcher.RemoveListener (GameEvents.ON_SPEED_RESTARTED, updateSpeed);
+		dispatcher.RemoveListener (GameEvents.ON_HEALTH_BONUS_ADDED, updateHealth);
        
     }
 
@@ -63,21 +60,7 @@ public class PlayerViewMediator : EventMediator
     {
         dispatcher.Dispatch(GameEvents.ON_ENEMY_COLLISION);
     }*/
-    void toAddSpeedBonus(IEvent evt)
-    {
-		dispatcher.Dispatch(GameEvents.TO_ADD_SPEED_BONUS, view.COLLECTABLE1);
-    }
-
-	void toAddPowerBonus(IEvent evt)
-	{
-		dispatcher.Dispatch(GameEvents.TO_ADD_POWER_BONUS, view.COLLECTABLE2);
-
-	}
-
-	void toDecreaseEnemySpeed()
-	{
-		dispatcher.Dispatch (GameEvents.TO_DECREASE_ENEMY_SPEED, view.COLLECTABLE3);
-	}
+  
 
 	void updateSpeed(IEvent evt)
 	{
@@ -85,5 +68,10 @@ public class PlayerViewMediator : EventMediator
 		float speed =(float)evt.data;       
 		view.updateSpeed (speed);
 	}
+	void updateHealth(IEvent evt)
+	{
 
+		float health = (float)evt.data;
+		view.updateHealth (health);
+	}
 }

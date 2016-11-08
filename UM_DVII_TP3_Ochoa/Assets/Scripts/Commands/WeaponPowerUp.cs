@@ -9,7 +9,7 @@ public class WeaponPowerUp : EventCommand
 
 
 	[Inject]
-	public IItemModel myWeapon{ get; set; }
+	public IweaponHealhPackModel myWeapon{ get; set; }
 
 	public override void Execute()
 	{

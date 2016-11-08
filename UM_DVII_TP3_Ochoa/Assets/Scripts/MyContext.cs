@@ -33,6 +33,7 @@ public class MyContext : MVCSContext {
 		commandBinder.Bind (GameEvents.PAINT_SLOT_ITEM_INVENTORY).To<SlotManipulation> ();
 		commandBinder.Bind (GameEvents.ON_SELECT_ITEM_BY_KEY).To<ItemSelection> ();
 		commandBinder.Bind (GameEvents.USE_ITEM).To<UsingItems> ();
+		commandBinder.Bind (GameEvents.ON_USE_HEALTH_PACK).To<PlayerHealthUp> ();
 
         mediationBinder.Bind<PlayerView>().To<PlayerViewMediator>();
         mediationBinder.Bind<InputView>().To<InputViewMediator>();
@@ -50,11 +51,12 @@ public class MyContext : MVCSContext {
 
 
 
-        injectionBinder.Bind<IPlayerModel>().To<PlayerModel>();
+		injectionBinder.Bind<IPlayerModel>().To<PlayerModel>().ToSingleton();
         injectionBinder.Bind<IEnemyModel>().To<EnemyModel>();
 		injectionBinder.Bind<ICollectableModel> ().To<CollectableModel> ();
 		injectionBinder.Bind<IItemModel> ().To<ItemModel> ().ToSingleton ();
 		injectionBinder.Bind<IInventoryModel> ().To<InventoryModel> ().ToSingleton();
+		injectionBinder.Bind<IweaponHealhPackModel> ().To<WeaponHealthPackModel> ();
 
        
     }
