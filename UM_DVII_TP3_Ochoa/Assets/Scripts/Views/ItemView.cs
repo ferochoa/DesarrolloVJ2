@@ -20,6 +20,7 @@ public class ItemView : View {
 		{
 			viewDispatcher.Dispatch (GameEvents.ITEM_PICKED_UP,this.gameObject);
 
+
 		}
 
 	}

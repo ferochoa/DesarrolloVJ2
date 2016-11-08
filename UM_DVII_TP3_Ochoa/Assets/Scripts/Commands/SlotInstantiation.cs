@@ -15,6 +15,8 @@ public class SlotInstantiation :EventCommand {
 	public IInventoryModel inventory { get; set; }
 
 
+
+
 	override public void Execute()
 	{
 		for (int i = 0; i < TOTAL_SLOTS; i++) {

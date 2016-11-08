@@ -17,7 +17,7 @@ public class SlotManipulation : EventCommand {
 	public override void Execute()
 
 	{
-
+		
 		int pos = (int)evt.data;
 
 		for (int i = 0; i < inventory.slots.Count; i++) {
@@ -25,6 +25,7 @@ public class SlotManipulation : EventCommand {
 
 			inventory.slots [pos].GetComponent<Image>().sprite = Resources.Load<Sprite> ("Sprites/" + PrefabNames.FULL_SPRITE);
 
+				
 		}
 
 	}

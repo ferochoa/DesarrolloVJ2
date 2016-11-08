@@ -12,7 +12,8 @@ public class ItemToAdd : EventCommand {
 	[Inject]
 	public IItemModel itemModel { get; set; }
 
-
+	[Inject]
+	public IInventoryModel inventory { get; set; }
 
 	public override void Execute()
 	{
@@ -21,8 +22,11 @@ public class ItemToAdd : EventCommand {
 		itemModel.items.Add (item);
 		//Debug.Log (itemModel.items.Count);
 		//Debug.Log(item.name);
-
-		dispatcher.Dispatch (GameEvents.ON_ITEM_ADDED_TO_INVENTORY);
+		for (int i = 0; i < itemModel.items.Count; i++) 
+		{
+			item.transform.SetParent (inventory.slots[i].transform, false);
+			dispatcher.Dispatch (GameEvents.ON_ITEM_ADDED_TO_INVENTORY, i);
+		}
 
 	}
 }

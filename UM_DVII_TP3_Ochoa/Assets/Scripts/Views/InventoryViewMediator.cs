@@ -33,17 +33,21 @@ public class InventoryViewMediator : EventMediator {
 		else 
 		{
 			view.openInventory ();
+
 		}
 	}
 
-	void itemControl()
+	void itemControl( IEvent evt)
 	{
-		view.itemControl ();
+		
+		int pos = (int)evt.data;
+		view.itemControl (pos);
+		//Debug.Log ("pos q recibo :" + pos);
 	}
 
 	void paintSlot()
 	{
-		dispatcher.Dispatch (GameEvents.PAINT_SLOT_ITEM_INVENTORY, view.totalItems);
+		dispatcher.Dispatch (GameEvents.PAINT_SLOT_ITEM_INVENTORY, view.position);
 	}
 
 }

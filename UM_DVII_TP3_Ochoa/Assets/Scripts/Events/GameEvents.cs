@@ -31,7 +31,9 @@ public class GameEvents : MonoBehaviour {
 	public static string ON_INVENTORY_MANIPULATION = "ON_INVENTORY_MANIPULATION";
 	public static string ITEM_PICKED_UP = "ITEM_PICKED_UP";
 	public static string ADD_ITEM = "ADD_ITEM";
-	public static string ON_SELECT_ITEM = "ON_SELECT_ITEM";
 	public static string ON_ITEM_ADDED_TO_INVENTORY = "ON_ITEM_ADDED_TO_INVENTORY";
 	public static string PAINT_SLOT_ITEM_INVENTORY = "PAINT_SLOT_ITEM_INVENTORY";
+	public static string ON_SELECT_ITEM_BY_KEY = "ON_SELECT_ITEM_BY_KEY";
+	public static string ON_ITEM_SELECTED = "ON_ITEM_SELECTED";
+	public static string USE_ITEM = "USE_ITEM";
 }

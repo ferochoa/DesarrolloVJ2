@@ -15,7 +15,7 @@ public class InputViewMediator :EventMediator {
         view.viewDispatcher.AddListener(GameEvents.ON_PLAYER_GO_BACKWARD, onPlayerGoBackward);
         view.viewDispatcher.AddListener(GameEvents.ON_PLAYER_JUMP, onPlayerJump);
 		view.viewDispatcher.AddListener (GameEvents.ON_INVENTORY_MANIPULATION, onInventoryManipulation);
-
+		view.viewDispatcher.AddListener (GameEvents.ON_SELECT_ITEM_BY_KEY, onSelectItemByKey);
     }
 
     override public void OnRemove()
@@ -26,6 +26,7 @@ public class InputViewMediator :EventMediator {
 		view.viewDispatcher.RemoveListener(GameEvents.ON_PLAYER_GO_BACKWARD, onPlayerGoBackward);
 		view.viewDispatcher.RemoveListener(GameEvents.ON_PLAYER_JUMP, onPlayerJump);
 		view.viewDispatcher.RemoveListener(GameEvents.ON_INVENTORY_MANIPULATION, onInventoryManipulation);
+		view.viewDispatcher.AddListener (GameEvents.ON_SELECT_ITEM_BY_KEY, onSelectItemByKey);
     }
 
     void onPlayerGoLeft()
@@ -52,5 +53,9 @@ public class InputViewMediator :EventMediator {
 	{
 		
 		dispatcher.Dispatch (GameEvents.ON_INVENTORY_MANIPULATION);
+	}
+	void onSelectItemByKey()
+	{
+		dispatcher.Dispatch (GameEvents.ON_SELECT_ITEM_BY_KEY, view.item_n);
 	}
 }

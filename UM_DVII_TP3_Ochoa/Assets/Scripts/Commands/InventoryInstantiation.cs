@@ -12,6 +12,7 @@ public class InventoryInstantiation :EventCommand {
 	{
 		GameObject goInv = GameObject.Instantiate(Resources.Load(PrefabNames.INVENTORY_PREFAB)) as GameObject;
 		goInv.transform.FindChild ("InventoryPanel").gameObject.AddComponent<InventoryView> ();
+		//goInv.transform.FindChild ("ButtonPanel").gameObject.AddComponent<PanelButtonView> ();
 		goInv.name = "Inventory";
 		goInv.transform.SetParent(contextView.transform);
 	}

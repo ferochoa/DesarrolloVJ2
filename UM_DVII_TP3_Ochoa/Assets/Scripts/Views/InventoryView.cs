@@ -10,8 +10,11 @@ public class InventoryView : View {
 	public IEventDispatcher viewDispatcher { get; set; }
 
 	internal bool open;
-	internal int totalItems = 0;
-	internal const int ITEMSCAPACITY = 6;
+	public int position;
+
+
+
+
 
 
 	public void closeInventary()
@@ -28,17 +31,19 @@ public class InventoryView : View {
 		Debug.Log ("inventario abierto");
 		this.gameObject.SetActive (true);
 		open = true;
+	
+
+
 	} 
 
 
-	public void itemControl()
+	public void itemControl(int pos)
 	{
-		
-		viewDispatcher.Dispatch (GameEvents.PAINT_SLOT_ITEM_INVENTORY, totalItems);
-		totalItems++;
-		if (totalItems == ITEMSCAPACITY) {
-			totalItems = 0;
-		}
+		position = pos;
+		viewDispatcher.Dispatch (GameEvents.PAINT_SLOT_ITEM_INVENTORY,position);
+		Debug.Log (position);
+
+
 
 	}
 

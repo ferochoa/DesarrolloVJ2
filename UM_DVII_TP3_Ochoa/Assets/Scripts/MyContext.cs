@@ -31,6 +31,8 @@ public class MyContext : MVCSContext {
 		commandBinder.Bind(GameEvents.ON_ENEMY_SPEED_DECREASED).To<TimerDESInstantiation>();
 		commandBinder.Bind (GameEvents.ITEM_PICKED_UP).To<ItemToAdd> ();
 		commandBinder.Bind (GameEvents.PAINT_SLOT_ITEM_INVENTORY).To<SlotManipulation> ();
+		commandBinder.Bind (GameEvents.ON_SELECT_ITEM_BY_KEY).To<ItemSelection> ();
+		commandBinder.Bind (GameEvents.USE_ITEM).To<UsingItems> ();
 
         mediationBinder.Bind<PlayerView>().To<PlayerViewMediator>();
         mediationBinder.Bind<InputView>().To<InputViewMediator>();
@@ -43,6 +45,7 @@ public class MyContext : MVCSContext {
 		mediationBinder.Bind<CollectableView>().To<CollectableViewMediator>();
 		mediationBinder.Bind<InventoryView>().To<InventoryViewMediator>();
 		mediationBinder.Bind<ItemView>().To<ItemViewMediator>();
+		mediationBinder.Bind<PanelButtonView>().To<PanelButtonViewMediator>();
         
 
 
