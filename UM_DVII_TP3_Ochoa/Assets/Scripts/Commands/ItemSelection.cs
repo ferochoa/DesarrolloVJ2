@@ -22,36 +22,20 @@ public class ItemSelection : EventCommand {
 		int position = (int)evt.data;
 		bool full = false;
 
-
-		for(int j =0; j< inventory.slots.Count; j++)
+		if(inventory.slots.Count >= position)
 		{
-			if (inventory.slots [position].transform.childCount != 0) {
+			if (inventory.slots [position].transform.childCount != 0)
+			{
+				// hacer un método en la vista que se encargue de esto
 				inventory.slots [position].GetComponent<Image> ().color = (Color.black);
 				full = true;
-			} 
-			else 
-			{
-				Debug.Log ("En la posicion " + (position+1) + " no hay ningun item para seleccionar");
 			}
 		}
 
-
-
-
-		for(int i =0;i< itemModel.items.Count; i++)
+		if(itemModel.items.Count >= position && full == true)
 		{
-			if (full == true)
-			{
-				Debug.Log (itemModel.items [position].name + " seleccionado");
-				dispatcher.Dispatch (GameEvents.ON_ITEM_SELECTED, itemModel.items[position].name);
-
-			}
+			Debug.Log("asdljnasdasd2");
+			dispatcher.Dispatch (GameEvents.ON_ITEM_SELECTED, itemModel.items[position].name);
 		}
-
-
-	
-
 	}
-
-
 }

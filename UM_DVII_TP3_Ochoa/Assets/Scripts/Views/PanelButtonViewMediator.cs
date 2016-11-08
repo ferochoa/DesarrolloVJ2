@@ -18,7 +18,7 @@ public class PanelButtonViewMediator : EventMediator {
 	override public void OnRemove()
 	{
 		dispatcher.RemoveListener(GameEvents.ON_ITEM_SELECTED, activatePanel);
-		view.viewDispatcher.AddListener (GameEvents.USE_ITEM, useItem);
+		view.viewDispatcher.RemoveListener (GameEvents.USE_ITEM, useItem);
 	}
 
 	void activatePanel(IEvent evt)
@@ -27,9 +27,9 @@ public class PanelButtonViewMediator : EventMediator {
 		if (view.open) {
 			view.desactivatePanel ();
 		}
-		else 
+		else
 		{
-			
+
 			view.activatePanel (itemName);
 
 		}
