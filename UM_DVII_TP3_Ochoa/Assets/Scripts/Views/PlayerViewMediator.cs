@@ -20,6 +20,7 @@ public class PlayerViewMediator : EventMediator
 		dispatcher.AddListener (GameEvents.ON_SPEED_BONUS_ADDED, updateSpeed);
 		dispatcher.AddListener (GameEvents.ON_SPEED_RESTARTED, updateSpeed);
 		dispatcher.AddListener (GameEvents.ON_HEALTH_BONUS_ADDED, updateHealth);
+		view.viewDispatcher.AddListener (GameEvents.ON_UPDATE_PLAYER_POSITION, updatePosition);
     }
 
     override public void OnRemove()
@@ -33,6 +34,7 @@ public class PlayerViewMediator : EventMediator
 		dispatcher.RemoveListener (GameEvents.ON_SPEED_BONUS_ADDED, updateSpeed);
 		dispatcher.RemoveListener (GameEvents.ON_SPEED_RESTARTED, updateSpeed);
 		dispatcher.RemoveListener (GameEvents.ON_HEALTH_BONUS_ADDED, updateHealth);
+		view.viewDispatcher.AddListener (GameEvents.ON_UPDATE_PLAYER_POSITION, updatePosition);
        
     }
 
@@ -73,5 +75,11 @@ public class PlayerViewMediator : EventMediator
 
 		float health = (float)evt.data;
 		view.updateHealth (health);
+	}
+	void updatePosition()
+	{
+
+		dispatcher.Dispatch (GameEvents.ON_UPDATE_PLAYER_POSITION, view.transform.position);
+
 	}
 }

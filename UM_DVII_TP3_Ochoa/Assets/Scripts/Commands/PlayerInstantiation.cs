@@ -19,13 +19,14 @@ public class PlayerInstantiation :EventCommand {
         go.name = "Player";
        
         go.AddComponent<PlayerView>();
-		go.AddComponent < WeaponView> ();
+		//go.AddComponent < WeaponView> ();
 
         PlayerView pv = go.GetComponent<PlayerView>();
         myPlayer.setSpeed();
 		myPlayer.health = 100;
         pv.updateSpeed(myPlayer.speed);
 		pv.updateHealth (myPlayer.health);
+		myPlayer.isArmed ();
         go.transform.parent = contextView.transform;
 		dispatcher.Dispatch(GameEvents.ON_PLAYER_ADDED_TO_SCENE);
        

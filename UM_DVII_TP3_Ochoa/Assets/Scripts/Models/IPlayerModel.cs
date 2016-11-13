@@ -7,9 +7,9 @@ public interface IPlayerModel {
     Vector3 position { get; set; }
     float speed { get; set;}
 	float health { get; set; }
+	bool armed { get; set;}
 
-    void setPoints();
-    void setPlayerPosition(Vector3 pos);
+    void setPoints();   
     void setSpeed ();
-   
+	void isArmed ();
 }

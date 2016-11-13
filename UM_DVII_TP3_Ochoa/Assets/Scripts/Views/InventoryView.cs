@@ -19,7 +19,7 @@ public class InventoryView : View {
 
 	public void closeInventary()
 	{
-		Debug.Log ("Inventario cerrado");
+		//Debug.Log ("Inventario cerrado");
 		 this.gameObject.SetActive (false);
 		 open = false;
 
@@ -28,7 +28,7 @@ public class InventoryView : View {
 
 	public void openInventory()
 	{
-		Debug.Log ("inventario abierto");
+		//Debug.Log ("Inventario abierto");
 		this.gameObject.SetActive (true);
 		open = true;
 	

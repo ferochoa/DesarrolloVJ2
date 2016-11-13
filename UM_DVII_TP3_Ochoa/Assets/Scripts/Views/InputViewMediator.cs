@@ -16,6 +16,7 @@ public class InputViewMediator :EventMediator {
         view.viewDispatcher.AddListener(GameEvents.ON_PLAYER_JUMP, onPlayerJump);
 		view.viewDispatcher.AddListener (GameEvents.ON_INVENTORY_MANIPULATION, onInventoryManipulation);
 		view.viewDispatcher.AddListener (GameEvents.ON_SELECT_ITEM_BY_KEY, onSelectItemByKey);
+
     }
 
     override public void OnRemove()

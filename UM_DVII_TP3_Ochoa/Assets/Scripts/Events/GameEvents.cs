@@ -37,6 +37,10 @@ public class GameEvents : MonoBehaviour {
 	public static string ON_ITEM_SELECTED = "ON_ITEM_SELECTED";
 	public static string USE_ITEM = "USE_ITEM";
 	public static string ON_USE_HEALTH_PACK ="ON_USE_HEALTH_PACK";
-	public static string ON_CHANGE_WEAPON ="ON_CHANGE_WEAPON";
+	public static string ON_EQUIP_WEAPON ="ON_EQUIP_WEAPON";
 	public static string ON_HEALTH_BONUS_ADDED ="ON_HEALTH_BONUS_ADDED";
+	public static string DROP_ITEM = "DROP_ITEM";
+	public static string ON_UPDATE_PLAYER_POSITION = "ON_UPDATE_PLAYER_POSITION";
+	public static string ITEM_POS = "ITEM_POS";
+	public static string READY_TO_INSTANTIATE_ITEM = "READY_TO_INSTANTIATE_ITEM";
 }

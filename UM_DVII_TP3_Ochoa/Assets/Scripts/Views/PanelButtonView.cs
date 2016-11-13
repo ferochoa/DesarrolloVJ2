@@ -10,6 +10,7 @@ public class PanelButtonView :View {
 
 	internal bool open;
 	public string itemName;
+	public int itemPos;
 
 	public void activatePanel(string itemName)
 	{
@@ -29,8 +30,21 @@ public class PanelButtonView :View {
 	}
 	public void useItem()
 	{
-		Debug.Log ("despacho este item " + itemName);
+		
 		viewDispatcher.Dispatch (GameEvents.USE_ITEM, itemName);
 
+	}
+	public void dropItem()
+	{
+
+		viewDispatcher.Dispatch (GameEvents.DROP_ITEM, itemPos);
+
+	}
+
+	public void getItemPos(int pos)
+	{
+
+		itemPos = pos;
+		Debug.Log (itemPos);
 	}
 }

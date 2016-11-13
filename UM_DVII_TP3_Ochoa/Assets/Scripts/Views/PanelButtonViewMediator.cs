@@ -13,12 +13,15 @@ public class PanelButtonViewMediator : EventMediator {
 		view.desactivatePanel ();
 		dispatcher.AddListener (GameEvents.ON_ITEM_SELECTED, activatePanel);
 		view.viewDispatcher.AddListener (GameEvents.USE_ITEM, useItem);
+		view.viewDispatcher.AddListener (GameEvents.DROP_ITEM, dropItem);
+		dispatcher.AddListener (GameEvents.ITEM_POS, getItemPos);
 	}
 
 	override public void OnRemove()
 	{
 		dispatcher.RemoveListener(GameEvents.ON_ITEM_SELECTED, activatePanel);
 		view.viewDispatcher.RemoveListener (GameEvents.USE_ITEM, useItem);
+		view.viewDispatcher.RemoveListener (GameEvents.DROP_ITEM, dropItem);
 	}
 
 	void activatePanel(IEvent evt)
@@ -38,6 +41,19 @@ public class PanelButtonViewMediator : EventMediator {
 	void useItem()
 	{
 		dispatcher.Dispatch (GameEvents.USE_ITEM, view.itemName);
+	}
+	void dropItem()
+	{
+
+		dispatcher.Dispatch (GameEvents.DROP_ITEM, view.itemPos);
+	}
+
+	void getItemPos(IEvent evt)
+	{
+		int pos = (int)evt.data;
+
+		view.getItemPos (pos);
+
 	}
 
 	}

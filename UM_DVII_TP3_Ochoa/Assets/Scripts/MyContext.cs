@@ -34,6 +34,10 @@ public class MyContext : MVCSContext {
 		commandBinder.Bind (GameEvents.ON_SELECT_ITEM_BY_KEY).To<ItemSelection> ();
 		commandBinder.Bind (GameEvents.USE_ITEM).To<UsingItems> ();
 		commandBinder.Bind (GameEvents.ON_USE_HEALTH_PACK).To<PlayerHealthUp> ();
+		commandBinder.Bind (GameEvents.ON_EQUIP_WEAPON).To<EquipWeapon> ();
+		commandBinder.Bind (GameEvents.DROP_ITEM).To<ItemToDrop> ();
+		commandBinder.Bind (GameEvents.ON_UPDATE_PLAYER_POSITION).To<UpdatePlayerPosition> ();
+		commandBinder.Bind (GameEvents.READY_TO_INSTANTIATE_ITEM).To<ToDropItem> ();
 
         mediationBinder.Bind<PlayerView>().To<PlayerViewMediator>();
         mediationBinder.Bind<InputView>().To<InputViewMediator>();

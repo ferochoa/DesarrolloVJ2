@@ -6,11 +6,8 @@ using System.Collections;
 
 public class PlayerView : View {
 
-    private const string ENEMY = "Enemy";
-    public string COLLECTABLE1 = "Collectable1"; 
-	public string COLLECTABLE2 = "Collectable2";
-	public string COLLECTABLE3 = "Collectable3"; 
-
+    
+   
     private Rigidbody rb;
     private float speed;
 
@@ -31,23 +28,27 @@ public class PlayerView : View {
     public void playerGoLeft()
     {
        rb.AddForce(new Vector3(1, 0, 0) * speed, ForceMode.Force);
-
+	   viewDispatcher.Dispatch (GameEvents.ON_UPDATE_PLAYER_POSITION, this.transform.position);
     }
     public void playerGoRight()
 	{
         rb.AddForce(new Vector3(-1, 0, 0) * speed, ForceMode.Force);
+		viewDispatcher.Dispatch (GameEvents.ON_UPDATE_PLAYER_POSITION, this.transform.position);
     }
 	public void playerGoFoward()
 	{
-        rb.AddForce(new Vector3(0, 0, -1) * speed, ForceMode.Force);
+        rb.AddForce(new Vector3(0, 0, 1) * speed, ForceMode.Force);
+		viewDispatcher.Dispatch (GameEvents.ON_UPDATE_PLAYER_POSITION, this.transform.position);
     }
 	public void playerGoBackward()
 	{
-        rb.AddForce(new Vector3(0, 0, 1) * speed, ForceMode.Force);
+        rb.AddForce(new Vector3(0, 0, -1) * speed, ForceMode.Force);
+		viewDispatcher.Dispatch (GameEvents.ON_UPDATE_PLAYER_POSITION, this.transform.position);
     }
 	public void playerJump()
 	{
         rb.AddForce(new Vector3(0, 1, 0) * speed, ForceMode.Force);
+		viewDispatcher.Dispatch (GameEvents.ON_UPDATE_PLAYER_POSITION, this.transform.position);
     }
     public void updateSpeed(float speed)
     {

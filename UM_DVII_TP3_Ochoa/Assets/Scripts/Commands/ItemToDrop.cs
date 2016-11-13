@@ -4,7 +4,7 @@ using strange.extensions.command.impl;
 using strange.extensions.context.api;
 using UnityEngine.UI;
 
-public class ItemSelection : EventCommand {
+public class ItemToDrop : EventCommand {
 
 	[Inject(ContextKeys.CONTEXT_VIEW)]
 	public GameObject contexView { get; set; }
@@ -20,23 +20,23 @@ public class ItemSelection : EventCommand {
 	{
 
 		int position = (int)evt.data;
-		bool full = false;
 
 		if(inventory.slots.Count >= position)
 		{
 			if (inventory.slots [position].transform.childCount != 0)
 			{
 				
-				inventory.slots [position].GetComponent<Image> ().color = (Color.black);
-				full = true;
+				inventory.slots [position].GetComponent<Image> ().color = (Color.red);
+
 			}
 		}
 
-		if(itemModel.items.Count >= position && full == true)
+		if(itemModel.items.Count >= position )
 		{
-			Debug.Log ("Item seleccionado: " + itemModel.items [position].name);
-			dispatcher.Dispatch (GameEvents.ON_ITEM_SELECTED, itemModel.items[position].name);
-			dispatcher.Dispatch (GameEvents.ITEM_POS, position);
+			
+			//itemModel.items.RemoveAt (position);
 		}
+
+		dispatcher.Dispatch (GameEvents.READY_TO_INSTANTIATE_ITEM, itemModel.items [position].name);
 	}
 }
