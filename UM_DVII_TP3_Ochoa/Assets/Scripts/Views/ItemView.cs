@@ -24,4 +24,15 @@ public class ItemView : View {
 		}
 
 	}
+
+	public void destroyItem(string name)
+	{
+		if(this.gameObject.name == name)
+		{
+			
+			Destroy (this.gameObject);
+
+		}
+
+	}
 }

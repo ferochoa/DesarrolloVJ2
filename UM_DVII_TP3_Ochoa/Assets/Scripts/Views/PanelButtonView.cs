@@ -45,6 +45,6 @@ public class PanelButtonView :View {
 	{
 
 		itemPos = pos;
-		Debug.Log (itemPos);
+		//Debug.Log (itemPos);
 	}
 }

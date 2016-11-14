@@ -43,4 +43,5 @@ public class GameEvents : MonoBehaviour {
 	public static string ON_UPDATE_PLAYER_POSITION = "ON_UPDATE_PLAYER_POSITION";
 	public static string ITEM_POS = "ITEM_POS";
 	public static string READY_TO_INSTANTIATE_ITEM = "READY_TO_INSTANTIATE_ITEM";
+	public static string TO_DESTROY_ITEM = "TO_DESTROY_ITEM";
 }
