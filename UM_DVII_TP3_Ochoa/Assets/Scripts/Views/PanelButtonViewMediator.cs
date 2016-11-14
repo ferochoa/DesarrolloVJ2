@@ -15,6 +15,7 @@ public class PanelButtonViewMediator : EventMediator {
 		view.viewDispatcher.AddListener (GameEvents.USE_ITEM, useItem);
 		view.viewDispatcher.AddListener (GameEvents.DROP_ITEM, dropItem);
 		dispatcher.AddListener (GameEvents.ITEM_POS, getItemPos);
+
 	}
 
 	override public void OnRemove()
@@ -22,6 +23,8 @@ public class PanelButtonViewMediator : EventMediator {
 		dispatcher.RemoveListener(GameEvents.ON_ITEM_SELECTED, activatePanel);
 		view.viewDispatcher.RemoveListener (GameEvents.USE_ITEM, useItem);
 		view.viewDispatcher.RemoveListener (GameEvents.DROP_ITEM, dropItem);
+		dispatcher.RemoveListener (GameEvents.ITEM_POS, getItemPos);
+		;
 	}
 
 

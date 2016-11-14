@@ -54,6 +54,7 @@ public class MyContext : MVCSContext {
 		mediationBinder.Bind<ItemView>().To<ItemViewMediator>();
 		mediationBinder.Bind<PanelButtonView>().To<PanelButtonViewMediator>();
 		mediationBinder.Bind<LittleButtonView>().To<LittleButtonViewMediator>();
+		mediationBinder.Bind<DropButtonView>().To<DropButtonViewMediator>();
         
 
 

@@ -9,7 +9,7 @@ public class LittleButtonView : View {
 	public IEventDispatcher viewDispatcher { get; set; }
 
 	internal bool open;
-
+	public int value;
 
 	public void closePanel()
 	{
@@ -27,7 +27,15 @@ public class LittleButtonView : View {
 		open = true;
 
 
-
 	} 
+
+	public void dropItem(int value)
+	{
+		this.value = value;	
+		viewDispatcher.Dispatch (GameEvents.DROP_ITEM, value);
+
+
+
+	}
 
 }
