@@ -32,12 +32,16 @@ public class PanelButtonView :View {
 	{
 		
 		viewDispatcher.Dispatch (GameEvents.USE_ITEM, itemName);
+		this.gameObject.SetActive (false);
+		open = false;
 
 	}
 	public void dropItem()
 	{
 
 		viewDispatcher.Dispatch (GameEvents.DROP_ITEM, itemPos);
+		this.gameObject.SetActive (false);
+		open = false;
 
 	}
 
@@ -45,6 +49,6 @@ public class PanelButtonView :View {
 	{
 
 		itemPos = pos;
-		//Debug.Log (itemPos);
+
 	}
 }

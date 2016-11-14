@@ -20,12 +20,14 @@ public class ItemToAdd : EventCommand {
 
 		GameObject item = (GameObject)evt.data;
 		itemModel.items.Add (item);
-		//Debug.Log (itemModel.items.Count);
-		//Debug.Log(item.name);
+
 		for (int i = 0; i < itemModel.items.Count; i++) 
 		{
-			item.transform.SetParent (inventory.slots[i].transform, false);
-			dispatcher.Dispatch (GameEvents.ON_ITEM_ADDED_TO_INVENTORY, i);
+			if (inventory.slots [i].transform.childCount == 0) 
+			{
+				item.transform.SetParent (inventory.slots [i].transform, false);
+				dispatcher.Dispatch (GameEvents.ON_ITEM_ADDED_TO_INVENTORY, i);
+			}
 		}
 
 	}

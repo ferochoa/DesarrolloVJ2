@@ -20,13 +20,10 @@ public class SlotManipulation : EventCommand {
 		
 		int pos = (int)evt.data;
 
-		for (int i = 0; i < inventory.slots.Count; i++) {
-
-
-			inventory.slots [pos].GetComponent<Image>().sprite = Resources.Load<Sprite> ("Sprites/" + PrefabNames.FULL_SPRITE);
+		inventory.slots [pos].GetComponent<Image>().sprite = Resources.Load<Sprite> ("Sprites/" + PrefabNames.FULL_SPRITE);
 
 				
-		}
+
 
 	}
 }

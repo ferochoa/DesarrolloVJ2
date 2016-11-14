@@ -27,12 +27,12 @@ public class PlayerView : View {
 
     public void playerGoLeft()
     {
-       rb.AddForce(new Vector3(1, 0, 0) * speed, ForceMode.Force);
+       rb.AddForce(new Vector3(-1, 0, 0) * speed, ForceMode.Force);
 	   viewDispatcher.Dispatch (GameEvents.ON_UPDATE_PLAYER_POSITION, this.transform.position);
     }
     public void playerGoRight()
 	{
-        rb.AddForce(new Vector3(-1, 0, 0) * speed, ForceMode.Force);
+        rb.AddForce(new Vector3(1, 0, 0) * speed, ForceMode.Force);
 		viewDispatcher.Dispatch (GameEvents.ON_UPDATE_PLAYER_POSITION, this.transform.position);
     }
 	public void playerGoFoward()

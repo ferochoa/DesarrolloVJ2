@@ -44,4 +44,7 @@ public class GameEvents : MonoBehaviour {
 	public static string ITEM_POS = "ITEM_POS";
 	public static string READY_TO_INSTANTIATE_ITEM = "READY_TO_INSTANTIATE_ITEM";
 	public static string TO_DESTROY_ITEM = "TO_DESTROY_ITEM";
+	public static string REMOVE_FROM_LIST = "DELETE_FROM_LIST";
+	public static string INVENTORY_FULL = "INVENTORY_FULL";
+
 }

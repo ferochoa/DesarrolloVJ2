@@ -20,6 +20,7 @@ public class SlotInstantiation :EventCommand {
 	override public void Execute()
 	{
 		for (int i = 0; i < TOTAL_SLOTS; i++) {
+			
 			GameObject goSlot = GameObject.Instantiate (Resources.Load (PrefabNames.SLOT_PREFAB)) as GameObject;
 			goSlot.GetComponent<Image> ().sprite = Resources.Load <Sprite> ("Sprites/" + PrefabNames.EMPTY_SPRITE);
 			goSlot.name = "Slot "+(i+1);

@@ -15,7 +15,7 @@ public class ToDropItem : EventCommand {
 	public override void Execute()
 	{
 		string viewName = (string)evt.data;
-		//Debug.Log (viewName);
+
 		IweaponHealhPackModel itemModel = injectionBinder.GetBinding (viewName).value as IweaponHealhPackModel;
 
 		GameObject goItem = GameObject.Instantiate (Resources.Load (itemModel.name))as GameObject;

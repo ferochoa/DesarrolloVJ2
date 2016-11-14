@@ -14,5 +14,7 @@
 	public static string SLOT_PREFAB = "Slot";
 	public static string EMPTY_SPRITE = "Empty";
 	public static string FULL_SPRITE = "Full";
+	public static string SELECTION_SPRITE = "Selection";
+
 
 }

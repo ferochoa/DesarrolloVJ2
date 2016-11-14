@@ -11,7 +11,7 @@ public class MyContext : MVCSContext {
 
     public MyContext(MonoBehaviour view) : base(view)
 	{
-        //Debug.Log("constructor MiContexto");
+        
     }
     override protected void mapBindings()
     {
@@ -38,6 +38,8 @@ public class MyContext : MVCSContext {
 		commandBinder.Bind (GameEvents.DROP_ITEM).To<ItemToDrop> ();
 		commandBinder.Bind (GameEvents.ON_UPDATE_PLAYER_POSITION).To<UpdatePlayerPosition> ();
 		commandBinder.Bind (GameEvents.READY_TO_INSTANTIATE_ITEM).To<ToDropItem> ();
+		commandBinder.Bind (GameEvents.REMOVE_FROM_LIST).To<RemoveItemFromList> ();
+
 
         mediationBinder.Bind<PlayerView>().To<PlayerViewMediator>();
         mediationBinder.Bind<InputView>().To<InputViewMediator>();
@@ -51,6 +53,7 @@ public class MyContext : MVCSContext {
 		mediationBinder.Bind<InventoryView>().To<InventoryViewMediator>();
 		mediationBinder.Bind<ItemView>().To<ItemViewMediator>();
 		mediationBinder.Bind<PanelButtonView>().To<PanelButtonViewMediator>();
+		mediationBinder.Bind<LittleButtonView>().To<LittleButtonViewMediator>();
         
 
 

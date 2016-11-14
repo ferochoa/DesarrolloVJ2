@@ -24,18 +24,14 @@ public class PanelButtonViewMediator : EventMediator {
 		view.viewDispatcher.RemoveListener (GameEvents.DROP_ITEM, dropItem);
 	}
 
+
 	void activatePanel(IEvent evt)
 	{
 		string itemName = (string)evt.data;
-		if (view.open) {
-			view.desactivatePanel ();
-		}
-		else
-		{
 
-			view.activatePanel (itemName);
+	     view.activatePanel (itemName);
 
-		}
+
 	}
 
 	void useItem()

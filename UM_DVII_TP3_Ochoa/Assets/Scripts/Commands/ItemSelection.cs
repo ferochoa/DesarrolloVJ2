@@ -27,7 +27,7 @@ public class ItemSelection : EventCommand {
 			if (inventory.slots [position].transform.childCount != 0)
 			{
 				
-				inventory.slots [position].GetComponent<Image> ().color = (Color.black);
+				inventory.slots [position].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Sprites/" + PrefabNames.SELECTION_SPRITE);
 				full = true;
 			}
 		}
