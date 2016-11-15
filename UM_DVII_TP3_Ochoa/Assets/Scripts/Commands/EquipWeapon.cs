@@ -12,9 +12,10 @@ public class EquipWeapon : EventCommand {
 	public IPlayerModel myPlayer { get; set; }
 
 
+
 	public override void Execute()
 	{
-		Debug.Log ("estoy aca");
+
 		string viewName = (string)evt.data;
 		IweaponHealhPackModel itemModel = injectionBinder.GetBinding (viewName).value as IweaponHealhPackModel;
 
@@ -34,9 +35,14 @@ public class EquipWeapon : EventCommand {
 
 		else{
 
+			GameObject player = GameObject.Find ("Player");	
 
-			//dispatcher.Dispatch (GameEvents.REPLACE_WEAPON);
+			dispatcher.Dispatch (GameEvents.TO_DESTROY_ITEM, player.transform.GetChild (0).name);
+			dispatcher.Dispatch (GameEvents.READY_TO_INSTANTIATE_ITEM,player.transform.GetChild (0).name);
 
+			myPlayer.armed = false;
+
+			dispatcher.Dispatch (GameEvents.ON_EQUIP_WEAPON, itemModel.name);
 	}
 }
 }
